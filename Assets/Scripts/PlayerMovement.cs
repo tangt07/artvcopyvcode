@@ -1,134 +1,210 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent (typeof (Animator))]
+[RequireComponent (typeof (Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour {
-	public KeyCode left;
-	public KeyCode right;
-	public KeyCode jump;
-	public KeyCode block;
-	public KeyCode attack;
-	public KeyCode projectile;
-	bool leftkeydown;
-	bool rightkeydown;
-	bool jumpkeydown;
-	bool blockkeydown;
-	bool attackkeydown;
-	bool projectilekeydown;
+
+	private Rigidbody2D rb;
+	public Animator anim;
+	public LayerMask whatIsGround;
+	public Transform groundCheck;
+	public bool grounded=false;
+	public bool groundchange = false;
+
+	public GameObject projectileprefab;
+	GameObject projectilecopy;
+
+	float maxhorizontalvelocity = 5f;
+	public enum Direction{None,Left,Right,Up,Down,LeftUp,RightUp,LeftDown,RightDown,Special};
+	public enum Attack{None,Combat,Projectile,CombatProjectile};
+	public enum Facing {Left,Right};
+	public enum Player{None,Player1,Player2};
+	public enum Character{None,Craig,Amy,Will,Killer};
+
+	public Direction currentDirection = Direction.None;
+	public Attack currentAttack = Attack.None;
+	public Facing currentFacing = Facing.Right;
+
+	public bool shieldup;
+	public Player thisPlayer = Player.None;
+	public Character thisCharacter = Character.None;
+
 
 	// Use this for initialization
 	void Start () {
+		rb = GetComponent<Rigidbody2D> ();
+		anim = GetComponent<Animator>();
+
 
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-//		if (Input.GetKeyDown(left)) {
-//			leftkeydown = true;
-//		}	
-//		if (Input.GetKeyDown(right)) {
-//			rightkeydown = true;
-//		}
-//		if (Input.GetKeyDown(jump)) {
-//			jumpkeydown = true;			
-//		}
-//		if (Input.GetKeyDown(block)) {
-//			blockkeydown = true;
-//		}
-//		if (Input.GetKeyDown(projectile)) {
-//			projectilekeydown = true;
-//		}
-//		if (Input.GetKeyDown (attack)) {
-//			attackkeydown = true;
-//		}
-//		if (Input.GetKeyUp(left)) {
-//			leftkeydown = false;
-//		}	
-//		if (Input.GetKeyUp(right)) {
-//			rightkeydown = false;
-//		}
-//		if (Input.GetKeyUp(jump)) {
-//			jumpkeydown = false;			
-//		}
-//		if (Input.GetKeyUp(block)) {
-//			blockkeydown = false;
-//		}
-//		if (Input.GetKeyUp(projectile)) {
-//			projectilekeydown = false;
-//		}
-//		if (Input.GetKeyUp (attack)) {
-//			attackkeydown = false;
-//		}
-		leftkeydown = Input.GetKey(left);
-		rightkeydown = Input.GetKey(right);
-		jumpkeydown = Input.GetKeyDown(jump);
-		blockkeydown = Input.GetKey(block);
-		projectilekeydown = Input.GetKey(projectile);
-		attackkeydown = Input.GetKey (attack);
+		//The following are all the inputs needed for State Machine
 
-		XMove (leftkeydown, rightkeydown);
-		YMove (jumpkeydown, blockkeydown);
-		Attack(projectilekeydown, attackkeydown);
+
+		if (currentDirection == Direction.None) {
+			anim.SetBool("DirectionRight",false);
+			anim.SetBool("DirectionLeft",false);
+			anim.SetBool("DirectionUp",false);
+			anim.SetBool("DirectionDown",false);
+		}
+		if (currentDirection == Direction.Left) {
+			anim.SetBool("DirectionRight",false);
+			anim.SetBool("DirectionLeft",true);
+			anim.SetBool("DirectionUp",false);
+			anim.SetBool("DirectionDown",false);
+		}
+		if (currentDirection == Direction.Right) {
+			anim.SetBool("DirectionRight",true);
+			anim.SetBool("DirectionLeft",false);
+			anim.SetBool("DirectionUp",false);
+			anim.SetBool("DirectionDown",false);
+		}
+		if (currentDirection == Direction.Up) {
+			anim.SetBool("DirectionRight",false);
+			anim.SetBool("DirectionLeft",false);
+			anim.SetBool("DirectionUp",true);
+			anim.SetBool("DirectionDown",false);
+		}
+		if (currentDirection == Direction.LeftUp) {
+			anim.SetBool("DirectionRight",false);
+			anim.SetBool("DirectionLeft",true);
+			anim.SetBool("DirectionUp",true);
+			anim.SetBool("DirectionDown",false);
+		}
+		if (currentDirection == Direction.RightUp) {
+			anim.SetBool("DirectionRight",true);
+			anim.SetBool("DirectionLeft",false);
+			anim.SetBool("DirectionUp",true);
+			anim.SetBool("DirectionDown",false);
+		}
+		if (currentDirection == Direction.Down) {
+			anim.SetBool("DirectionRight",false);
+			anim.SetBool("DirectionLeft",false);
+			anim.SetBool("DirectionUp",false);
+			anim.SetBool("DirectionDown",true);
+		}
+		if (currentDirection == Direction.LeftDown) {
+			anim.SetBool("DirectionRight",false);
+			anim.SetBool("DirectionLeft",true);
+			anim.SetBool("DirectionUp",false);
+			anim.SetBool("DirectionDown",true);
+		}
+		if (currentDirection == Direction.RightDown) {
+			anim.SetBool("DirectionRight",true);
+			anim.SetBool("DirectionLeft",false);
+			anim.SetBool("DirectionUp",false);
+			anim.SetBool("DirectionDown",true);
+		}
+		if (currentDirection == Direction.Special) {
+			anim.SetBool("DirectionRight",true);
+			anim.SetBool("DirectionLeft",true);
+			anim.SetBool("DirectionUp",false);
+			anim.SetBool("DirectionDown",false);
+		}
+		if (currentFacing == Facing.Left) {
+			anim.SetBool("FacingLeft",true);
+			anim.SetBool("FacingRight",false);
+		}
+
+		if (currentFacing == Facing.Right) {
+			anim.SetBool("FacingRight",true);
+			anim.SetBool("FacingLeft",false);			
+		}
+		
+		if(currentAttack == Attack.Combat){
+			anim.SetTrigger("Attack");
+		}
+		
+		if(grounded && currentAttack == Attack.Projectile){
+			anim.SetTrigger("Projectile");
+			SpawnProjectile();
+		}
+		
+		if(currentAttack == Attack.CombatProjectile){
+			anim.SetTrigger("Projectile");
+			SpawnProjectile();
+		}
+		if (grounded && (currentDirection == Direction.Up || currentDirection == Direction.RightUp || currentDirection == Direction.LeftUp)) {
+			anim.SetBool ("Grounded", false);
+			groundchange = true;
+			grounded = false;
+
+		} 
+		if (grounded) {
+			anim.SetBool ("Grounded", true);
+		} else {
+			anim.SetFloat("Yvelocity", rb.velocity.y);
+		}
+		shieldup = (grounded && (currentFacing == Facing.Right && (currentDirection == Direction.Left || currentDirection == Direction.LeftDown)) ||
+			(currentFacing == Facing.Left && (currentDirection == Direction.Right || currentDirection == Direction.RightDown)));
+
+
+
+		if (projectilecopy) {
+			if (currentFacing == Facing.Right) {
+				projectilecopy.transform.Rotate(new Vector3(0,0,-20f));
+			}
+			if (currentFacing == Facing.Left) {
+				projectilecopy.transform.Rotate(new Vector3(0,0,20f));
+			}
+		}
+
 
 	}
+	void SpawnProjectile(){
+		GameObject Clone;
+		float angle = 0f;
+		if (currentFacing == Facing.Right) {
+			projectilecopy = Instantiate (projectileprefab, transform.position + .5f * transform.right, Quaternion.identity) as GameObject;
+			projectilecopy.GetComponent<Rigidbody2D> ().velocity = new Vector2 (10f, 0);
+		}
+		if (currentFacing == Facing.Left) {
+			projectilecopy = Instantiate (projectileprefab, transform.position - .5f * transform.right, Quaternion.identity) as GameObject;
+			projectilecopy.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-10f, 0);
+		}
 
-	enum State {Left, Right, Idle, Block, Jump, JumpRight, JumpLeft};
+	}
+	void FixedUpdate(){
+		Direction cacheDirection;
+		Facing cacheFacing;
+		Attack cacheAttack;
+		Vector2 tempv;
+
+		tempv = rb.velocity;
+		if (groundchange) {
+			groundchange = false;
+			tempv.y = 10f;
+		}
+		if (!groundchange) {
+			grounded = Physics2D.OverlapCircle (groundCheck.position, 0.15f, whatIsGround); // checks if you are within 0.15 position in the Y of the ground
+		}
+		cacheDirection = currentDirection;
+		cacheFacing = currentFacing;
+		cacheAttack = currentAttack;
+		if (grounded&&(cacheDirection == Direction.None || cacheDirection == Direction.Down || cacheDirection == Direction.LeftDown || cacheDirection == Direction.RightDown)) {
+			tempv.x = 0;
+		}
+		if (grounded&&(cacheDirection == Direction.RightUp || (cacheFacing == Facing.Right && cacheDirection==Direction.Right))) {
+			tempv.x = 4f;
+		}
+		if (grounded &&(cacheDirection == Direction.LeftUp|| (cacheFacing == Facing.Left && cacheDirection==Direction.Left))) {
+			tempv.x = -4f;
+		}
+		if (grounded&&(cacheFacing == Facing.Right && cacheDirection==Direction.Left)) {
+			tempv.x = -2f;
+		}		
+		if (grounded&&(cacheFacing == Facing.Left && cacheDirection==Direction.Right)) {
+			tempv.x = 2f;
+		}
+
+		rb.velocity = tempv;
+	}
+
+
 	
-	State CurrentState = State.Idle;
-
-	void XMove (bool leftdown, bool rightdown){
-
-		if (leftdown && rightdown) {
-			Debug.Log ("Invalid Key Combination");
-		} else if (leftdown) {
-			Left ();
-		} else if (rightdown) {
-			Right ();
-		} else if (!leftdown && !rightdown) {
-			Debug.Log ("No X Movement");
-		}
-	}
-	void YMove(bool jumpdown, bool blockdown){
-		if (jumpdown && blockdown) {
-			Debug.Log ("Invalid Key Combination");
-		} else if (jumpdown) {
-			Jump ();
-		} else if (blockdown) {
-			Block ();
-		} else if (!jumpdown && !blockdown) {
-			Debug.Log ("No Y Movement");
-		}
-	}
-	void Attack( bool projectiledown, bool attackdown){
-		if (projectiledown && attackdown) {
-			Debug.Log ("Invalid Key Combination");
-		} else if (attackdown) {
-			Contact_Atk ();
-		} else if (projectiledown) {
-			Projectile_Atk ();
-		} if (!projectiledown && !attackdown) {
-			Debug.Log ("No Attack");
-		}
-
-	}
-
-	void Jump(){
-		Debug.Log ("Jumping!");
-	}
-	void Left(){		
-		Debug.Log ("Moving Left!");
-	}
-	void Right(){		
-		Debug.Log ("Moving Right!");
-	}
-	void Contact_Atk(){		
-		Debug.Log ("Contact Attack!");
-	}
-	void Projectile_Atk(){
-		Debug.Log ("Projectile Attack!");
-	}
-	void Block(){
-		Debug.Log ("Blocking!");
-	}
 
 }

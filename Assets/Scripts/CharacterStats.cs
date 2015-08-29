@@ -4,23 +4,24 @@ using System.Collections;
 public class CharacterStats : MonoBehaviour {
 	// Lose live when health reaches 0.
 	// 100 health points.
-	int current_health=100;
-	// Fight until 2 lives are gone on either side.  Lost live when health reaches 0.
-	int lives=2;
-	public GameObject prefab;
-	
+	public int current_health=100;
+	// Fight until 2 lives (rounds) are gone on either side.  Lost life (round) when health reaches 0.
+	public int lives=2;
 
-	void Lose_Life(){
+
+
+	public void Lose_Life(){
 		lives -= 1;
+
 	}
-	void Reset_Lives(){
+	public void Reset_Lives(){
 		lives = 2;
 	}
-	void Reset_health(){
+	public void Reset_health(){
 		current_health = 100;
 		
 	}
-	void Take_Damage(int damage = 1){
+	public void Take_Damage(int damage = 1){
 		current_health -= damage;
 		if (current_health <= 0) {
 			Lose_Life();
