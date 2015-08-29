@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		Select.selectedPlayer = Select.Player.Craig; // for testing
+		//Select.selectedPlayer = Select.Player.Craig; // for testing
 		if (Select.selectedPlayer == Select.Player.Craig) {
 			player1 = Instantiate(craigprefab,new Vector3(-3f,-1f,0),Quaternion.identity) as GameObject;
 			//opponent is either amy or will
