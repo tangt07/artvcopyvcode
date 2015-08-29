@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Start(){
 		anim = GetComponent<Animator> ();
 		anim.SetInteger ("Health", current_health);
+
 	}
 
 
