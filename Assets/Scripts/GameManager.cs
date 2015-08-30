@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour {
 	public PlayerHealth player2health;
 
 
-	int current_fight = 1;
-	int current_round = 1;
+	public int current_fight = 1;
+	public int current_round = 1;
 	GameObject player1;
 	GameObject player2;
 	GameObject opponent;
@@ -71,6 +71,10 @@ public class GameManager : MonoBehaviour {
 
 	float distance;
 
+	Animator player1anim;
+
+	Animator player2anim;
+
 	//need to pass Direction Facing and Attack to PlayerMovement Scripts
 
 
@@ -79,6 +83,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 
 		if (Select.selectedPlayer == Select.Player.None) {
 			Select.selectedPlayer = Select.Player.Craig;
@@ -116,37 +121,120 @@ public class GameManager : MonoBehaviour {
 		player1movement.thisPlayer = PlayerMovement.Player.Player1;
 		player2movement.thisPlayer = PlayerMovement.Player.Player2;
 
+		player1anim = player1.GetComponent<Animator> ();
+		player2anim = player2.GetComponent<Animator> ();
+
 		FlipSprites ();
 		StartCoroutine (GameTimer ());
 
 		firstframe = true;
 
-
+		current_fight = 1;
+		current_round = 1;
+		player1_wins = 0;
+		player2_wins = 0;
 
 
 	}
-	void RandomOpponent(GameObject x,GameObject y){
-		// Determines opponents for game
-		int randomnumber = Random.Range (0,2);
-		if (randomnumber == 0) {
-			opponentList[0] = x;
-			opponentList[1] = y;
-		} else {
-			opponentList[0] = y;
-			opponentList[1] = x;
-		}
-		opponentList[2] = killerprefab;
-	}
-	void Restart(){
-		//the fight starts over
-	
-	}
-	void Quit(){
 
-	}
 	// Update is called once per frame
 	void Update()
 	{	
+		if ((player1health.current_health<=0 ||player2health.current_health<=0)) {
+			//round is over
+			if(player1health.current_health < player2health.current_health){
+				//player2 wins round
+				player2_wins++;
+				player2anim.SetTrigger("Win");
+				current_round++;
+			}
+			if(player1health.current_health > player2health.current_health){
+				//player1 wins round
+				player1_wins++;				
+				player1anim.SetTrigger("Win");
+				current_round++;
+			}
+			if(player1health.current_health == player2health.current_health){
+				//tie nothing changes
+			}
+			if(player2_wins >=2){
+				//you lose
+				//continue?
+				Debug.Log("You Lose!");
+
+			}
+			if(player1_wins >= 2){
+				current_fight++;
+				if(current_fight <= 3){
+					Destroy(player2);
+					InstantiateOpponent();
+					player1_wins = 0;
+					player2_wins = 0;
+					player1health = player1.GetComponent<PlayerHealth> ();		
+					player2health = player2.GetComponent<PlayerHealth> ();
+					player1healthbarrt = player1healthbar.rectTransform;
+					player2healthbarrt = player2healthbar.rectTransform;
+					
+					player1movement = player1.GetComponent<PlayerMovement> ();
+					player2movement = player2.GetComponent<PlayerMovement> ();
+					player1movement.currentFacing = PlayerMovement.Facing.Right;
+					player2movement.currentFacing = PlayerMovement.Facing.Left;
+					player1movement.thisPlayer = PlayerMovement.Player.Player1;
+					player2movement.thisPlayer = PlayerMovement.Player.Player2;
+					
+					player1anim = player1.GetComponent<Animator> ();
+					player2anim = player2.GetComponent<Animator> ();
+					
+					FlipSprites ();
+				}else{
+					//you win
+					Debug.Log ("You Win!");
+
+				}
+
+
+			}
+			Restart ();
+
+		}
+
+		GetPlayer1Inputs ();
+		GetPlayer2AIInputs ();
+		//change facing if switch sides
+		FlipSprites();
+
+		//Healthbar Update
+		player1healthbarrt.sizeDelta = new Vector2(player1health.current_health * 2.0f,30f);	
+		player2healthbarrt.sizeDelta = new Vector2(player2health.current_health * 2.0f,30f);	
+
+		//
+	}
+	void GetPlayer2AIInputs(){
+		//AI
+		if (nextframe) {
+			nextframe = false;
+			player2movement.currentAttack = PlayerMovement.Attack.None;
+		}
+		if (!nextframe) {
+			if(distance > 3.5 && waittime > 1){
+				waittime=0;
+				player2movement.currentAttack = PlayerMovement.Attack.Projectile;
+				nextframe=true;
+				
+			}
+			else{
+				//player2 continuously blocks
+				if (player2movement.currentFacing == PlayerMovement.Facing.Left) {
+					player2movement.currentDirection = PlayerMovement.Direction.RightDown;
+				}
+				if (player2movement.currentFacing == PlayerMovement.Facing.Right) {
+					player2movement.currentDirection = PlayerMovement.Direction.LeftDown;
+				}
+			}
+		}
+		waittime += Time.deltaTime;
+	}
+	void GetPlayer1Inputs(){
 		//Inputs
 		
 		leftkeydown 	= 	Input.GetKeyDown(left);
@@ -167,44 +255,13 @@ public class GameManager : MonoBehaviour {
 		blockkeyup 		= 	Input.GetKeyUp(block);
 		projectilekeyup = 	Input.GetKeyUp(projectile);
 		attackkeyup 	= 	Input.GetKeyUp (attack);
-
+		
 		distance = Mathf.Abs (player1.transform.localPosition.x - player2.transform.localPosition.x);
 		//if any input, Change State (my keyboard can only handle 2 arrows at once)
 		//player1 directions and attacks
 		GetDirection ();
 		GetAttack ();
-		//change facing if switch sides
-		FlipSprites();
 
-
-		//projectile button
-		if (nextframe) {
-			nextframe = false;
-			player2movement.currentAttack = PlayerMovement.Attack.None;
-		}
-		if (!nextframe) {
-			if(distance > 3.5 && waittime > 1){
-				waittime=0;
-				player2movement.currentAttack = PlayerMovement.Attack.Projectile;
-				nextframe=true;
-
-			}
-			else{
-				//player2 continuously blocks
-				if (player2movement.currentFacing == PlayerMovement.Facing.Left) {
-					player2movement.currentDirection = PlayerMovement.Direction.RightDown;
-				}
-				if (player2movement.currentFacing == PlayerMovement.Facing.Right) {
-					player2movement.currentDirection = PlayerMovement.Direction.LeftDown;
-				}
-			}
-		}
-
-		waittime += Time.deltaTime;
-
-		//Healthbar Update
-		player1healthbarrt.sizeDelta = new Vector2(player1health.current_health * 2.0f,30f);	
-		player2healthbarrt.sizeDelta = new Vector2(player2health.current_health * 2.0f,30f);	
 	}
 	void GetAttack(){
 		if (attackkeydown && projectilekeydown) {
@@ -382,6 +439,29 @@ public class GameManager : MonoBehaviour {
 
 		player2 = Instantiate(opponentList[current_fight-1],new Vector3(3f,-1f,0),Quaternion.identity) as GameObject;
 
+	}
+	void RandomOpponent(GameObject x,GameObject y){
+		// Determines opponents for game
+		int randomnumber = Random.Range (0,2);
+		if (randomnumber == 0) {
+			opponentList[0] = x;
+			opponentList[1] = y;
+		} else {
+			opponentList[0] = y;
+			opponentList[1] = x;
+		}
+		opponentList[2] = killerprefab;
+	}
+	void Restart(){
+		player1health.Reset_health ();
+		player2health.Reset_health ();
+		player1.transform.position = new Vector3 (-3, -1, 0);
+		player2.transform.position = new Vector3 (3, -1, 0);
+		player1anim.SetTrigger ("Restart");
+		player2anim.SetTrigger ("Restart");
+	}
+	void Quit(){
+		
 	}
 	IEnumerator GameTimer(){
 		while (timer > 0) {
