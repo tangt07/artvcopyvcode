@@ -12,8 +12,8 @@ public class Select : MonoBehaviour {
 	public Text confirm;
 
 
-	public enum Player{None,Craig,Amy,Will};
-	public static Player selectedPlayer = Player.None;
+
+	public static PlayerName selectedPlayer = PlayerName.None;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +25,7 @@ public class Select : MonoBehaviour {
 		if(EventSystem.current.currentSelectedGameObject != selectbutton.gameObject){
 			selectbutton.interactable = false;
 			selectbutton.GetComponentInChildren<Text>().text = "Select";
-			selectedPlayer = Player.None;
+			selectedPlayer = PlayerName.None;
 			confirm.enabled = false;
 
 
@@ -36,7 +36,7 @@ public class Select : MonoBehaviour {
 		var navigation = selectbutton.navigation;
 		navigation.selectOnUp = craigbutton;
 		selectbutton.navigation = navigation;
-		selectedPlayer = Player.Craig;
+		selectedPlayer = PlayerName.Craig;
 
 
 		ModifyButton ();
@@ -47,7 +47,7 @@ public class Select : MonoBehaviour {
 		var navigation = selectbutton.navigation;
 		navigation.selectOnUp = amybutton;
 		selectbutton.navigation = navigation;
-		selectedPlayer = Player.Amy;
+		selectedPlayer = PlayerName.Amy;
 
 		ModifyButton ();
 
@@ -56,7 +56,7 @@ public class Select : MonoBehaviour {
 		var navigation = selectbutton.navigation;
 		navigation.selectOnUp = willbutton;
 		selectbutton.navigation = navigation;
-		selectedPlayer = Player.Will;
+		selectedPlayer = PlayerName.Will;
 
 		ModifyButton ();
 	}

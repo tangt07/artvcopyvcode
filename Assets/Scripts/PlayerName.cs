@@ -1,0 +1,1 @@
+﻿public enum PlayerName{None,Craig,Amy,Will,Killer};

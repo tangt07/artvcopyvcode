@@ -15,12 +15,8 @@ public class PlayerMovement : MonoBehaviour {
 	public GameObject projectileprefab;
 	GameObject projectilecopy;
 
-	float maxhorizontalvelocity = 5f;
-	public enum Direction{None,Left,Right,Up,Down,LeftUp,RightUp,LeftDown,RightDown,Special};
-	public enum Attack{None,Combat,Projectile,CombatProjectile};
-	public enum Facing {Left,Right};
-	public enum Player{None,Player1,Player2};
-	public enum Character{None,Craig,Amy,Will,Killer};
+	float maxforwardvelocity = 4f;
+	float maxbackvelocity = 2f;
 
 	public Direction currentDirection = Direction.None;
 	public Attack currentAttack = Attack.None;
@@ -28,7 +24,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	public bool shieldup;
 	public Player thisPlayer = Player.None;
-	public Character thisCharacter = Character.None;
+	public Player thisCharacter = Player.None;
+
 
 
 	// Use this for initialization
@@ -146,18 +143,17 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (projectilecopy) {
 			if (currentFacing == Facing.Right) {
-				projectilecopy.transform.Rotate(new Vector3(0,0,-20f));
+				projectilecopy.transform.Rotate(new Vector3(0,0,-720f*Time.deltaTime));
 			}
 			if (currentFacing == Facing.Left) {
-				projectilecopy.transform.Rotate(new Vector3(0,0,20f));
+				projectilecopy.transform.Rotate(new Vector3(0,0,720f*Time.deltaTime));
 			}
 		}
 
 
 	}
 	void SpawnProjectile(){
-		GameObject Clone;
-		float angle = 0f;
+
 		if (currentFacing == Facing.Right) {
 			projectilecopy = Instantiate (projectileprefab, transform.position + .5f * transform.right, Quaternion.identity) as GameObject;
 			projectilecopy.GetComponent<Rigidbody2D> ().velocity = new Vector2 (10f, 0);
@@ -189,16 +185,16 @@ public class PlayerMovement : MonoBehaviour {
 			tempv.x = 0;
 		}
 		if (grounded&&(cacheDirection == Direction.RightUp || (cacheFacing == Facing.Right && cacheDirection==Direction.Right))) {
-			tempv.x = 4f;
+			tempv.x = maxforwardvelocity;
 		}
 		if (grounded &&(cacheDirection == Direction.LeftUp|| (cacheFacing == Facing.Left && cacheDirection==Direction.Left))) {
-			tempv.x = -4f;
+			tempv.x = -maxforwardvelocity;
 		}
 		if (grounded&&(cacheFacing == Facing.Right && cacheDirection==Direction.Left)) {
-			tempv.x = -2f;
+			tempv.x = -maxbackvelocity;
 		}		
 		if (grounded&&(cacheFacing == Facing.Left && cacheDirection==Direction.Right)) {
-			tempv.x = 2f;
+			tempv.x = maxbackvelocity;
 		}
 
 		rb.velocity = tempv;
