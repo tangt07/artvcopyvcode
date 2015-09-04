@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Attack.cs" />
      <Compile Include="Assets\Scripts\CharacterStats.cs" />
+     <Compile Include="Assets\Scripts\Collision.cs" />
      <Compile Include="Assets\Scripts\DestroyOnCollision.cs" />
      <Compile Include="Assets\Scripts\Direction.cs" />
      <Compile Include="Assets\Scripts\Facing.cs" />

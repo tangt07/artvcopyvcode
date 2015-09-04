@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour {
 	// Lose live when health reaches 0.
 	// 100 health points.
 	public int current_health=100;
+	public bool cooldown;
 	// Fight until 2 lives (rounds) are gone on either side.  Lost life (round) when health reaches 0.
 	public int lives=2;
 	Animator anim;
@@ -30,15 +31,23 @@ public class PlayerHealth : MonoBehaviour {
 		
 	}
 	public void Take_Damage(int damage = 1){
-		current_health -= damage;
 
+		current_health -= damage;
+		
 		anim.SetInteger ("Health", current_health);
 		anim.SetTrigger ("Damage");
-
+		
 		if (current_health <= 0) {
 			Lose_Life();
 		}
 	}
+	IEnumerator Damage(){
+		cooldown = false;
+		while (cooldown) {
+			yield return new WaitForSeconds(1);
+		}
 
+
+	}
 
 }
