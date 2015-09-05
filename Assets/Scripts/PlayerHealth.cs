@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour {
 		if (current_health <= 0) {
 			Lose_Life();
 		}
+
 	}
 	IEnumerator Damage(){
 		cooldown = false;

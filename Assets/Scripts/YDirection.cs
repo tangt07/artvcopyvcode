@@ -1,0 +1,1 @@
+﻿public enum YDirection{None,Up,Down,Special};

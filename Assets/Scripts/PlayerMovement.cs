@@ -196,7 +196,14 @@ public class PlayerMovement : MonoBehaviour {
 		if (grounded&&(cacheFacing == Facing.Left && cacheDirection==Direction.Right)) {
 			tempv.x = maxbackvelocity;
 		}
-
+		if (!grounded && tempv.y == 0 && cacheFacing == Facing.Left) {
+			//if lands on something not the ground
+			tempv = new Vector2(5f,5f);
+		}
+		if (!grounded && tempv.y == 0 && cacheFacing == Facing.Right) {
+			//if lands on something not the ground
+			tempv = new Vector2(-5f,5f);
+		}
 		rb.velocity = tempv;
 	}
 
