@@ -86,7 +86,7 @@ public class GameManager2 : MonoBehaviour {
 		if (Player2Select.player2name == PlayerName.None) {
 			Player2Select.player2name = PlayerName.Amy;
 		}
-		if (SceneManager.players == 0) {
+		if (SceneManager.players == 0||SceneManager.players==2) {
 			numfights = 1;
 			SceneManager.players = 2;
 		}

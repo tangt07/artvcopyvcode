@@ -1,137 +1,137 @@
 fileFormatVersion: 2
-guid: 35fb3a0471afcb44bb5ea4b344570426
-timeCreated: 1440874304
+guid: a209f3c7aefda25428f66a013d173f03
+timeCreated: 1441819504
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Craig_idle1
-    21300002: Craig_idle2
-    21300004: Craig_idle3
-    21300006: Craig_idle4
-    21300008: Craig_idle5
-    21300010: Craig_idle6
-    21300012: Amy_idle1
-    21300014: Amy_idle2
-    21300016: Amy_idle3
-    21300018: Amy_idle4
-    21300020: Amy_idle5
-    21300022: Amy_idle6
-    21300024: Craig_walk1
-    21300026: Craig_walk2
-    21300028: Craig_walk3
-    21300030: Craig_walk4
-    21300032: Craig_walk5
-    21300034: Craig_combat1
-    21300036: Craig_combat2
-    21300038: Craig_projectile1
-    21300040: Craig_projectile2
-    21300042: Craig_projectile
-    21300044: Amy_walk1
-    21300046: Amy_walk2
-    21300048: Amy_walk3
-    21300050: Amy_walk4
-    21300052: Amy_walk5
-    21300054: Amy_combat1
-    21300056: Amy_combat2
-    21300058: Amy_projectile1
-    21300060: Amy_projectile2
-    21300062: Amy_projectile
-    21300064: Craig_jump1
-    21300066: Craig_jump2
-    21300068: Craig_jump3
-    21300070: Craig_jump4
-    21300072: Craig_jump5
-    21300074: Craig_damage1
-    21300076: Craig_damage2
-    21300078: Craig_block1
-    21300080: Craig_block2
-    21300082: Craig_projectile1_flip
-    21300084: Amy_jump1
-    21300086: Amy_jump2
-    21300088: Amy_jump3
-    21300090: Amy_jump4
-    21300092: Amy_jump5
-    21300094: Amy_damage1
-    21300096: Amy_damage2
-    21300098: Amy_block1
-    21300100: Amy_block2
-    21300102: Amy_projectile1_flip
-    21300104: Craig_death1
-    21300106: Craig_death2
-    21300108: Craig_death3
-    21300110: Craig_death4
-    21300112: Craig_win1
-    21300114: Craig_win2
-    21300116: Amy_death1
-    21300118: Amy_death2
-    21300120: Amy_death3
-    21300122: Amy_death4
-    21300124: Amy_win1
-    21300126: Amy_win2
-    21300128: Killer_idle1
-    21300130: Killer_idle2
-    21300132: Killer_idle3
-    21300134: Killer_idle4
-    21300136: Killer_idle5
-    21300138: Killer_idle6
-    21300140: Will_idle1
-    21300142: Will_idle2
-    21300144: Will_idle3
-    21300146: Will_idle4
-    21300148: Will_idle5
-    21300150: Will_idle6
-    21300152: Killer_walk1
-    21300154: Killer_walk2
-    21300156: Killer_walk3
-    21300158: Killer_walk4
-    21300160: Killer_walk5
-    21300162: Killer_combat1
-    21300164: Killer_combat2
-    21300166: Killer_projectile1
-    21300168: Killer_projectile2
-    21300170: Killer_projectile
-    21300172: Will_walk1
-    21300174: Will_walk2
-    21300176: Will_walk3
-    21300178: Will_walk4
-    21300180: Will_walk5
-    21300182: Will_combat1
-    21300184: Will_combat2
-    21300186: Will_projectile1
-    21300188: Will_projectile2
-    21300190: Will_projectile
-    21300192: Killer_jump1
-    21300194: Killer_jump2
-    21300196: Killer_jump3
-    21300198: Killer_jump4
-    21300200: Killer_jump5
-    21300202: Killer_damage1
-    21300204: Killer_damage2
-    21300206: Killer_block1
-    21300208: Killer_block2
-    21300210: Killer_block2_flip
-    21300212: Will_jump1
-    21300214: Will_jump2
-    21300216: Will_jump3
-    21300218: Will_jump4
-    21300220: Will_jump5
-    21300222: Will_damage1
-    21300224: Will_damage2
-    21300226: Will_block1
-    21300228: Will_block2
-    21300230: Will_projectile1_flip
-    21300232: Killer_death1
-    21300234: Killer_death2
-    21300236: Killer_death3
-    21300238: Killer_death4
-    21300240: Killer_win1
-    21300242: Killer_win2
-    21300244: Will_death1
-    21300246: Will_death2
-    21300248: Will_death3
-    21300250: Will_death4
-    21300252: Will_win1
-    21300254: Will_win2
+    21300000: ArtCopyCode_SpriteSheet_0
+    21300002: ArtCopyCode_SpriteSheet_1
+    21300004: ArtCopyCode_SpriteSheet_2
+    21300006: ArtCopyCode_SpriteSheet_3
+    21300008: ArtCopyCode_SpriteSheet_4
+    21300010: ArtCopyCode_SpriteSheet_5
+    21300012: ArtCopyCode_SpriteSheet_6
+    21300014: ArtCopyCode_SpriteSheet_7
+    21300016: ArtCopyCode_SpriteSheet_8
+    21300018: ArtCopyCode_SpriteSheet_9
+    21300020: ArtCopyCode_SpriteSheet_10
+    21300022: ArtCopyCode_SpriteSheet_11
+    21300024: ArtCopyCode_SpriteSheet_12
+    21300026: ArtCopyCode_SpriteSheet_13
+    21300028: ArtCopyCode_SpriteSheet_14
+    21300030: ArtCopyCode_SpriteSheet_15
+    21300032: ArtCopyCode_SpriteSheet_16
+    21300034: ArtCopyCode_SpriteSheet_17
+    21300036: ArtCopyCode_SpriteSheet_18
+    21300038: ArtCopyCode_SpriteSheet_19
+    21300040: ArtCopyCode_SpriteSheet_20
+    21300042: ArtCopyCode_SpriteSheet_21
+    21300044: ArtCopyCode_SpriteSheet_22
+    21300046: ArtCopyCode_SpriteSheet_23
+    21300048: ArtCopyCode_SpriteSheet_24
+    21300050: ArtCopyCode_SpriteSheet_25
+    21300052: ArtCopyCode_SpriteSheet_26
+    21300054: ArtCopyCode_SpriteSheet_27
+    21300056: ArtCopyCode_SpriteSheet_28
+    21300058: ArtCopyCode_SpriteSheet_29
+    21300060: ArtCopyCode_SpriteSheet_30
+    21300062: ArtCopyCode_SpriteSheet_31
+    21300064: ArtCopyCode_SpriteSheet_32
+    21300066: ArtCopyCode_SpriteSheet_33
+    21300068: ArtCopyCode_SpriteSheet_34
+    21300070: ArtCopyCode_SpriteSheet_35
+    21300072: ArtCopyCode_SpriteSheet_36
+    21300074: ArtCopyCode_SpriteSheet_37
+    21300076: ArtCopyCode_SpriteSheet_38
+    21300078: ArtCopyCode_SpriteSheet_39
+    21300080: ArtCopyCode_SpriteSheet_40
+    21300082: ArtCopyCode_SpriteSheet_41
+    21300084: ArtCopyCode_SpriteSheet_42
+    21300086: ArtCopyCode_SpriteSheet_43
+    21300088: ArtCopyCode_SpriteSheet_44
+    21300090: ArtCopyCode_SpriteSheet_45
+    21300092: ArtCopyCode_SpriteSheet_46
+    21300094: ArtCopyCode_SpriteSheet_47
+    21300096: ArtCopyCode_SpriteSheet_48
+    21300098: ArtCopyCode_SpriteSheet_49
+    21300100: ArtCopyCode_SpriteSheet_50
+    21300102: ArtCopyCode_SpriteSheet_51
+    21300104: ArtCopyCode_SpriteSheet_52
+    21300106: ArtCopyCode_SpriteSheet_53
+    21300108: ArtCopyCode_SpriteSheet_54
+    21300110: ArtCopyCode_SpriteSheet_55
+    21300112: ArtCopyCode_SpriteSheet_56
+    21300114: ArtCopyCode_SpriteSheet_57
+    21300116: ArtCopyCode_SpriteSheet_58
+    21300118: ArtCopyCode_SpriteSheet_59
+    21300120: ArtCopyCode_SpriteSheet_60
+    21300122: ArtCopyCode_SpriteSheet_61
+    21300124: ArtCopyCode_SpriteSheet_62
+    21300126: ArtCopyCode_SpriteSheet_63
+    21300128: ArtCopyCode_SpriteSheet_65
+    21300130: ArtCopyCode_SpriteSheet_66
+    21300132: ArtCopyCode_SpriteSheet_67
+    21300134: ArtCopyCode_SpriteSheet_68
+    21300136: ArtCopyCode_SpriteSheet_69
+    21300138: ArtCopyCode_SpriteSheet_70
+    21300140: ArtCopyCode_SpriteSheet_71
+    21300142: ArtCopyCode_SpriteSheet_72
+    21300144: ArtCopyCode_SpriteSheet_73
+    21300146: ArtCopyCode_SpriteSheet_74
+    21300148: ArtCopyCode_SpriteSheet_75
+    21300150: ArtCopyCode_SpriteSheet_76
+    21300152: ArtCopyCode_SpriteSheet_77
+    21300154: ArtCopyCode_SpriteSheet_78
+    21300156: ArtCopyCode_SpriteSheet_79
+    21300158: ArtCopyCode_SpriteSheet_80
+    21300160: ArtCopyCode_SpriteSheet_81
+    21300162: ArtCopyCode_SpriteSheet_82
+    21300164: ArtCopyCode_SpriteSheet_83
+    21300166: ArtCopyCode_SpriteSheet_84
+    21300168: ArtCopyCode_SpriteSheet_85
+    21300170: ArtCopyCode_SpriteSheet_86
+    21300172: ArtCopyCode_SpriteSheet_87
+    21300174: ArtCopyCode_SpriteSheet_88
+    21300176: ArtCopyCode_SpriteSheet_89
+    21300178: ArtCopyCode_SpriteSheet_90
+    21300180: ArtCopyCode_SpriteSheet_91
+    21300182: ArtCopyCode_SpriteSheet_92
+    21300184: ArtCopyCode_SpriteSheet_93
+    21300186: ArtCopyCode_SpriteSheet_94
+    21300188: ArtCopyCode_SpriteSheet_95
+    21300190: ArtCopyCode_SpriteSheet_96
+    21300192: ArtCopyCode_SpriteSheet_97
+    21300194: ArtCopyCode_SpriteSheet_98
+    21300196: ArtCopyCode_SpriteSheet_99
+    21300198: ArtCopyCode_SpriteSheet_100
+    21300200: ArtCopyCode_SpriteSheet_101
+    21300202: ArtCopyCode_SpriteSheet_102
+    21300204: ArtCopyCode_SpriteSheet_103
+    21300206: ArtCopyCode_SpriteSheet_104
+    21300208: ArtCopyCode_SpriteSheet_105
+    21300210: ArtCopyCode_SpriteSheet_106
+    21300212: ArtCopyCode_SpriteSheet_107
+    21300214: ArtCopyCode_SpriteSheet_108
+    21300216: ArtCopyCode_SpriteSheet_109
+    21300218: ArtCopyCode_SpriteSheet_110
+    21300220: ArtCopyCode_SpriteSheet_111
+    21300222: ArtCopyCode_SpriteSheet_112
+    21300224: ArtCopyCode_SpriteSheet_113
+    21300226: ArtCopyCode_SpriteSheet_114
+    21300228: ArtCopyCode_SpriteSheet_115
+    21300230: ArtCopyCode_SpriteSheet_116
+    21300232: ArtCopyCode_SpriteSheet_117
+    21300234: ArtCopyCode_SpriteSheet_118
+    21300236: ArtCopyCode_SpriteSheet_119
+    21300238: ArtCopyCode_SpriteSheet_120
+    21300240: ArtCopyCode_SpriteSheet_121
+    21300242: ArtCopyCode_SpriteSheet_122
+    21300244: ArtCopyCode_SpriteSheet_123
+    21300246: ArtCopyCode_SpriteSheet_124
+    21300248: ArtCopyCode_SpriteSheet_125
+    21300250: ArtCopyCode_SpriteSheet_126
+    21300252: ArtCopyCode_SpriteSheet_127
+    21300254: ArtCopyCode_SpriteSheet_128
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -177,7 +177,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Craig_idle1
+    - name: ArtCopyCode_SpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -185,9 +185,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_idle2
+    - name: ArtCopyCode_SpriteSheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -195,9 +195,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_idle3
+    - name: ArtCopyCode_SpriteSheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -205,9 +205,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_idle4
+    - name: ArtCopyCode_SpriteSheet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -215,9 +215,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_idle5
+    - name: ArtCopyCode_SpriteSheet_4
       rect:
         serializedVersion: 2
         x: 128
@@ -225,9 +225,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_idle6
+    - name: ArtCopyCode_SpriteSheet_5
       rect:
         serializedVersion: 2
         x: 160
@@ -235,9 +235,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_idle1
+    - name: ArtCopyCode_SpriteSheet_6
       rect:
         serializedVersion: 2
         x: 320
@@ -245,9 +245,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_idle2
+    - name: ArtCopyCode_SpriteSheet_7
       rect:
         serializedVersion: 2
         x: 352
@@ -255,9 +255,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_idle3
+    - name: ArtCopyCode_SpriteSheet_8
       rect:
         serializedVersion: 2
         x: 384
@@ -265,9 +265,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_idle4
+    - name: ArtCopyCode_SpriteSheet_9
       rect:
         serializedVersion: 2
         x: 416
@@ -275,9 +275,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_idle5
+    - name: ArtCopyCode_SpriteSheet_10
       rect:
         serializedVersion: 2
         x: 448
@@ -285,9 +285,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_idle6
+    - name: ArtCopyCode_SpriteSheet_11
       rect:
         serializedVersion: 2
         x: 480
@@ -295,9 +295,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_walk1
+    - name: ArtCopyCode_SpriteSheet_12
       rect:
         serializedVersion: 2
         x: 0
@@ -305,9 +305,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_walk2
+    - name: ArtCopyCode_SpriteSheet_13
       rect:
         serializedVersion: 2
         x: 32
@@ -315,9 +315,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_walk3
+    - name: ArtCopyCode_SpriteSheet_14
       rect:
         serializedVersion: 2
         x: 64
@@ -325,9 +325,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_walk4
+    - name: ArtCopyCode_SpriteSheet_15
       rect:
         serializedVersion: 2
         x: 96
@@ -335,9 +335,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_walk5
+    - name: ArtCopyCode_SpriteSheet_16
       rect:
         serializedVersion: 2
         x: 128
@@ -345,9 +345,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_combat1
+    - name: ArtCopyCode_SpriteSheet_17
       rect:
         serializedVersion: 2
         x: 160
@@ -355,9 +355,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_combat2
+    - name: ArtCopyCode_SpriteSheet_18
       rect:
         serializedVersion: 2
         x: 192
@@ -365,9 +365,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_projectile1
+    - name: ArtCopyCode_SpriteSheet_19
       rect:
         serializedVersion: 2
         x: 224
@@ -375,9 +375,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_projectile2
+    - name: ArtCopyCode_SpriteSheet_20
       rect:
         serializedVersion: 2
         x: 256
@@ -385,9 +385,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_projectile
+    - name: ArtCopyCode_SpriteSheet_21
       rect:
         serializedVersion: 2
         x: 299
@@ -397,7 +397,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_walk1
+    - name: ArtCopyCode_SpriteSheet_22
       rect:
         serializedVersion: 2
         x: 320
@@ -407,7 +407,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_walk2
+    - name: ArtCopyCode_SpriteSheet_23
       rect:
         serializedVersion: 2
         x: 352
@@ -415,9 +415,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_walk3
+    - name: ArtCopyCode_SpriteSheet_24
       rect:
         serializedVersion: 2
         x: 384
@@ -425,9 +425,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_walk4
+    - name: ArtCopyCode_SpriteSheet_25
       rect:
         serializedVersion: 2
         x: 416
@@ -435,9 +435,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_walk5
+    - name: ArtCopyCode_SpriteSheet_26
       rect:
         serializedVersion: 2
         x: 448
@@ -445,9 +445,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_combat1
+    - name: ArtCopyCode_SpriteSheet_27
       rect:
         serializedVersion: 2
         x: 480
@@ -455,9 +455,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_combat2
+    - name: ArtCopyCode_SpriteSheet_28
       rect:
         serializedVersion: 2
         x: 512
@@ -465,9 +465,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_projectile1
+    - name: ArtCopyCode_SpriteSheet_29
       rect:
         serializedVersion: 2
         x: 544
@@ -475,9 +475,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_projectile2
+    - name: ArtCopyCode_SpriteSheet_30
       rect:
         serializedVersion: 2
         x: 576
@@ -485,9 +485,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_projectile
+    - name: ArtCopyCode_SpriteSheet_31
       rect:
         serializedVersion: 2
         x: 619
@@ -497,7 +497,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_jump1
+    - name: ArtCopyCode_SpriteSheet_32
       rect:
         serializedVersion: 2
         x: 0
@@ -505,9 +505,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_jump2
+    - name: ArtCopyCode_SpriteSheet_33
       rect:
         serializedVersion: 2
         x: 32
@@ -515,9 +515,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_jump3
+    - name: ArtCopyCode_SpriteSheet_34
       rect:
         serializedVersion: 2
         x: 64
@@ -525,9 +525,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_jump4
+    - name: ArtCopyCode_SpriteSheet_35
       rect:
         serializedVersion: 2
         x: 96
@@ -535,9 +535,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_jump5
+    - name: ArtCopyCode_SpriteSheet_36
       rect:
         serializedVersion: 2
         x: 128
@@ -545,9 +545,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_damage1
+    - name: ArtCopyCode_SpriteSheet_37
       rect:
         serializedVersion: 2
         x: 160
@@ -555,9 +555,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_damage2
+    - name: ArtCopyCode_SpriteSheet_38
       rect:
         serializedVersion: 2
         x: 192
@@ -565,9 +565,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_block1
+    - name: ArtCopyCode_SpriteSheet_39
       rect:
         serializedVersion: 2
         x: 224
@@ -575,9 +575,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_block2
+    - name: ArtCopyCode_SpriteSheet_40
       rect:
         serializedVersion: 2
         x: 256
@@ -585,9 +585,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_projectile1_flip
+    - name: ArtCopyCode_SpriteSheet_41
       rect:
         serializedVersion: 2
         x: 288
@@ -595,9 +595,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_jump1
+    - name: ArtCopyCode_SpriteSheet_42
       rect:
         serializedVersion: 2
         x: 320
@@ -605,9 +605,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_jump2
+    - name: ArtCopyCode_SpriteSheet_43
       rect:
         serializedVersion: 2
         x: 352
@@ -615,9 +615,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_jump3
+    - name: ArtCopyCode_SpriteSheet_44
       rect:
         serializedVersion: 2
         x: 384
@@ -625,9 +625,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_jump4
+    - name: ArtCopyCode_SpriteSheet_45
       rect:
         serializedVersion: 2
         x: 416
@@ -635,9 +635,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_jump5
+    - name: ArtCopyCode_SpriteSheet_46
       rect:
         serializedVersion: 2
         x: 448
@@ -645,9 +645,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_damage1
+    - name: ArtCopyCode_SpriteSheet_47
       rect:
         serializedVersion: 2
         x: 480
@@ -657,7 +657,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_damage2
+    - name: ArtCopyCode_SpriteSheet_48
       rect:
         serializedVersion: 2
         x: 512
@@ -665,9 +665,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_block1
+    - name: ArtCopyCode_SpriteSheet_49
       rect:
         serializedVersion: 2
         x: 544
@@ -675,9 +675,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_block2
+    - name: ArtCopyCode_SpriteSheet_50
       rect:
         serializedVersion: 2
         x: 576
@@ -685,9 +685,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_projectile1_flip
+    - name: ArtCopyCode_SpriteSheet_51
       rect:
         serializedVersion: 2
         x: 608
@@ -695,9 +695,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_death1
+    - name: ArtCopyCode_SpriteSheet_52
       rect:
         serializedVersion: 2
         x: 0
@@ -705,9 +705,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_death2
+    - name: ArtCopyCode_SpriteSheet_53
       rect:
         serializedVersion: 2
         x: 32
@@ -715,9 +715,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_death3
+    - name: ArtCopyCode_SpriteSheet_54
       rect:
         serializedVersion: 2
         x: 64
@@ -725,9 +725,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_death4
+    - name: ArtCopyCode_SpriteSheet_55
       rect:
         serializedVersion: 2
         x: 96
@@ -735,9 +735,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_win1
+    - name: ArtCopyCode_SpriteSheet_56
       rect:
         serializedVersion: 2
         x: 128
@@ -745,9 +745,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Craig_win2
+    - name: ArtCopyCode_SpriteSheet_57
       rect:
         serializedVersion: 2
         x: 160
@@ -755,9 +755,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_death1
+    - name: ArtCopyCode_SpriteSheet_58
       rect:
         serializedVersion: 2
         x: 320
@@ -765,9 +765,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_death2
+    - name: ArtCopyCode_SpriteSheet_59
       rect:
         serializedVersion: 2
         x: 352
@@ -775,9 +775,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_death3
+    - name: ArtCopyCode_SpriteSheet_60
       rect:
         serializedVersion: 2
         x: 384
@@ -785,9 +785,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_death4
+    - name: ArtCopyCode_SpriteSheet_61
       rect:
         serializedVersion: 2
         x: 416
@@ -795,9 +795,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_win1
+    - name: ArtCopyCode_SpriteSheet_62
       rect:
         serializedVersion: 2
         x: 448
@@ -805,9 +805,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Amy_win2
+    - name: ArtCopyCode_SpriteSheet_63
       rect:
         serializedVersion: 2
         x: 477
@@ -817,7 +817,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_idle1
+    - name: ArtCopyCode_SpriteSheet_65
       rect:
         serializedVersion: 2
         x: 0
@@ -825,9 +825,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_idle2
+    - name: ArtCopyCode_SpriteSheet_66
       rect:
         serializedVersion: 2
         x: 32
@@ -835,9 +835,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_idle3
+    - name: ArtCopyCode_SpriteSheet_67
       rect:
         serializedVersion: 2
         x: 64
@@ -845,9 +845,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_idle4
+    - name: ArtCopyCode_SpriteSheet_68
       rect:
         serializedVersion: 2
         x: 96
@@ -855,9 +855,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_idle5
+    - name: ArtCopyCode_SpriteSheet_69
       rect:
         serializedVersion: 2
         x: 128
@@ -865,9 +865,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_idle6
+    - name: ArtCopyCode_SpriteSheet_70
       rect:
         serializedVersion: 2
         x: 160
@@ -875,9 +875,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_idle1
+    - name: ArtCopyCode_SpriteSheet_71
       rect:
         serializedVersion: 2
         x: 320
@@ -885,9 +885,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_idle2
+    - name: ArtCopyCode_SpriteSheet_72
       rect:
         serializedVersion: 2
         x: 352
@@ -895,9 +895,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_idle3
+    - name: ArtCopyCode_SpriteSheet_73
       rect:
         serializedVersion: 2
         x: 384
@@ -905,9 +905,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_idle4
+    - name: ArtCopyCode_SpriteSheet_74
       rect:
         serializedVersion: 2
         x: 416
@@ -915,9 +915,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_idle5
+    - name: ArtCopyCode_SpriteSheet_75
       rect:
         serializedVersion: 2
         x: 448
@@ -925,9 +925,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_idle6
+    - name: ArtCopyCode_SpriteSheet_76
       rect:
         serializedVersion: 2
         x: 480
@@ -935,9 +935,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_walk1
+    - name: ArtCopyCode_SpriteSheet_77
       rect:
         serializedVersion: 2
         x: 0
@@ -945,9 +945,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_walk2
+    - name: ArtCopyCode_SpriteSheet_78
       rect:
         serializedVersion: 2
         x: 32
@@ -955,9 +955,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_walk3
+    - name: ArtCopyCode_SpriteSheet_79
       rect:
         serializedVersion: 2
         x: 64
@@ -965,9 +965,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_walk4
+    - name: ArtCopyCode_SpriteSheet_80
       rect:
         serializedVersion: 2
         x: 96
@@ -975,9 +975,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_walk5
+    - name: ArtCopyCode_SpriteSheet_81
       rect:
         serializedVersion: 2
         x: 128
@@ -985,9 +985,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_combat1
+    - name: ArtCopyCode_SpriteSheet_82
       rect:
         serializedVersion: 2
         x: 160
@@ -995,9 +995,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_combat2
+    - name: ArtCopyCode_SpriteSheet_83
       rect:
         serializedVersion: 2
         x: 192
@@ -1005,9 +1005,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_projectile1
+    - name: ArtCopyCode_SpriteSheet_84
       rect:
         serializedVersion: 2
         x: 224
@@ -1015,9 +1015,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_projectile2
+    - name: ArtCopyCode_SpriteSheet_85
       rect:
         serializedVersion: 2
         x: 256
@@ -1027,7 +1027,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_projectile
+    - name: ArtCopyCode_SpriteSheet_86
       rect:
         serializedVersion: 2
         x: 299
@@ -1037,7 +1037,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_walk1
+    - name: ArtCopyCode_SpriteSheet_87
       rect:
         serializedVersion: 2
         x: 320
@@ -1045,9 +1045,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_walk2
+    - name: ArtCopyCode_SpriteSheet_88
       rect:
         serializedVersion: 2
         x: 352
@@ -1055,9 +1055,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_walk3
+    - name: ArtCopyCode_SpriteSheet_89
       rect:
         serializedVersion: 2
         x: 384
@@ -1065,9 +1065,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_walk4
+    - name: ArtCopyCode_SpriteSheet_90
       rect:
         serializedVersion: 2
         x: 416
@@ -1075,9 +1075,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_walk5
+    - name: ArtCopyCode_SpriteSheet_91
       rect:
         serializedVersion: 2
         x: 448
@@ -1085,9 +1085,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_combat1
+    - name: ArtCopyCode_SpriteSheet_92
       rect:
         serializedVersion: 2
         x: 480
@@ -1095,9 +1095,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_combat2
+    - name: ArtCopyCode_SpriteSheet_93
       rect:
         serializedVersion: 2
         x: 512
@@ -1105,9 +1105,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_projectile1
+    - name: ArtCopyCode_SpriteSheet_94
       rect:
         serializedVersion: 2
         x: 544
@@ -1115,9 +1115,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_projectile2
+    - name: ArtCopyCode_SpriteSheet_95
       rect:
         serializedVersion: 2
         x: 576
@@ -1125,9 +1125,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_projectile
+    - name: ArtCopyCode_SpriteSheet_96
       rect:
         serializedVersion: 2
         x: 619
@@ -1137,7 +1137,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_jump1
+    - name: ArtCopyCode_SpriteSheet_97
       rect:
         serializedVersion: 2
         x: 0
@@ -1145,9 +1145,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_jump2
+    - name: ArtCopyCode_SpriteSheet_98
       rect:
         serializedVersion: 2
         x: 32
@@ -1155,9 +1155,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_jump3
+    - name: ArtCopyCode_SpriteSheet_99
       rect:
         serializedVersion: 2
         x: 64
@@ -1165,9 +1165,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_jump4
+    - name: ArtCopyCode_SpriteSheet_100
       rect:
         serializedVersion: 2
         x: 96
@@ -1175,9 +1175,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_jump5
+    - name: ArtCopyCode_SpriteSheet_101
       rect:
         serializedVersion: 2
         x: 128
@@ -1185,9 +1185,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_damage1
+    - name: ArtCopyCode_SpriteSheet_102
       rect:
         serializedVersion: 2
         x: 160
@@ -1195,9 +1195,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_damage2
+    - name: ArtCopyCode_SpriteSheet_103
       rect:
         serializedVersion: 2
         x: 192
@@ -1205,9 +1205,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_block1
+    - name: ArtCopyCode_SpriteSheet_104
       rect:
         serializedVersion: 2
         x: 224
@@ -1215,9 +1215,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_block2
+    - name: ArtCopyCode_SpriteSheet_105
       rect:
         serializedVersion: 2
         x: 256
@@ -1225,9 +1225,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_block2_flip
+    - name: ArtCopyCode_SpriteSheet_106
       rect:
         serializedVersion: 2
         x: 288
@@ -1235,9 +1235,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_jump1
+    - name: ArtCopyCode_SpriteSheet_107
       rect:
         serializedVersion: 2
         x: 320
@@ -1245,9 +1245,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_jump2
+    - name: ArtCopyCode_SpriteSheet_108
       rect:
         serializedVersion: 2
         x: 352
@@ -1255,9 +1255,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_jump3
+    - name: ArtCopyCode_SpriteSheet_109
       rect:
         serializedVersion: 2
         x: 384
@@ -1265,9 +1265,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_jump4
+    - name: ArtCopyCode_SpriteSheet_110
       rect:
         serializedVersion: 2
         x: 416
@@ -1275,9 +1275,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_jump5
+    - name: ArtCopyCode_SpriteSheet_111
       rect:
         serializedVersion: 2
         x: 448
@@ -1285,9 +1285,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_damage1
+    - name: ArtCopyCode_SpriteSheet_112
       rect:
         serializedVersion: 2
         x: 480
@@ -1295,9 +1295,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_damage2
+    - name: ArtCopyCode_SpriteSheet_113
       rect:
         serializedVersion: 2
         x: 512
@@ -1305,9 +1305,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_block1
+    - name: ArtCopyCode_SpriteSheet_114
       rect:
         serializedVersion: 2
         x: 544
@@ -1315,9 +1315,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_block2
+    - name: ArtCopyCode_SpriteSheet_115
       rect:
         serializedVersion: 2
         x: 576
@@ -1325,9 +1325,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_projectile1_flip
+    - name: ArtCopyCode_SpriteSheet_116
       rect:
         serializedVersion: 2
         x: 608
@@ -1335,9 +1335,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_death1
+    - name: ArtCopyCode_SpriteSheet_117
       rect:
         serializedVersion: 2
         x: 0
@@ -1345,9 +1345,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_death2
+    - name: ArtCopyCode_SpriteSheet_118
       rect:
         serializedVersion: 2
         x: 32
@@ -1355,9 +1355,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_death3
+    - name: ArtCopyCode_SpriteSheet_119
       rect:
         serializedVersion: 2
         x: 64
@@ -1365,9 +1365,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_death4
+    - name: ArtCopyCode_SpriteSheet_120
       rect:
         serializedVersion: 2
         x: 96
@@ -1375,9 +1375,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_win1
+    - name: ArtCopyCode_SpriteSheet_121
       rect:
         serializedVersion: 2
         x: 128
@@ -1385,9 +1385,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Killer_win2
+    - name: ArtCopyCode_SpriteSheet_122
       rect:
         serializedVersion: 2
         x: 160
@@ -1395,19 +1395,19 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_death1
+    - name: ArtCopyCode_SpriteSheet_123
       rect:
         serializedVersion: 2
-        x: 319
+        x: 320
         y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_death2
+    - name: ArtCopyCode_SpriteSheet_124
       rect:
         serializedVersion: 2
         x: 352
@@ -1415,9 +1415,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_death3
+    - name: ArtCopyCode_SpriteSheet_125
       rect:
         serializedVersion: 2
         x: 384
@@ -1425,9 +1425,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_death4
+    - name: ArtCopyCode_SpriteSheet_126
       rect:
         serializedVersion: 2
         x: 416
@@ -1435,9 +1435,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_win1
+    - name: ArtCopyCode_SpriteSheet_127
       rect:
         serializedVersion: 2
         x: 448
@@ -1445,9 +1445,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Will_win2
+    - name: ArtCopyCode_SpriteSheet_128
       rect:
         serializedVersion: 2
         x: 480
@@ -1455,7 +1455,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

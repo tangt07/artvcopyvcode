@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\XDirection.cs" />
      <Compile Include="Assets\Scripts\YDirection.cs" />
      <Compile Include="Assets\test.cs" />
+     <None Include="Assets\UI\Fonts\amiga_forever\Readme.txt" />
      <None Include="Assets\UI\Fonts\retro_computer\License - READ THIS.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
