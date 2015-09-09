@@ -13,7 +13,7 @@ public class Player1Select : MonoBehaviour {
 
 	public Text charName;
 	public Text charInfo;
-	private Dictionary<string,Button> _dicButtonByName = null;
+
 
 	private Dictionary<string,PlayerName> _dicPlayerNameByName = null;
 
@@ -22,11 +22,7 @@ public class Player1Select : MonoBehaviour {
 
 
 	void Awake(){
-		_dicButtonByName = new Dictionary<string, Button> ();
-		_dicButtonByName.Add ("Craig", craigbutton);
-		_dicButtonByName.Add ("Amy", amybutton);
-		_dicButtonByName.Add ("Will", willbutton);
-		_dicButtonByName.Add ("Killer", killerbutton);
+
 
 		_dicPlayerNameByName = new Dictionary<string, PlayerName> ();
 		_dicPlayerNameByName.Add ("Craig", PlayerName.Craig);
@@ -52,6 +48,7 @@ public class Player1Select : MonoBehaviour {
 		if (EventSystem.current.currentSelectedGameObject == null) {
 			EventSystem.current.SetSelectedGameObject (craigbutton.gameObject);
 		}
+
 		if (EventSystem.current.currentSelectedGameObject == craigbutton.gameObject) {
 			charName.text = "Craig the Copywriter";
 			charInfo.text ="Craig believes that anything and everything in this world is a story\nwaiting to be told -- and after a few beers, he's ready to tell them\nall. He can hypnotize with words, and craft another person's thoughts\nwith the right combination of storytelling and masterful facial hair.\nHis toolbox is simple, but powerful: 26 tiny instruments that know no\nboundaries and can transform dreams into reality.";
@@ -80,6 +77,9 @@ public class Player1Select : MonoBehaviour {
 	
 
 
+	}
+	public void SelectOnHover(GameObject g){
+		EventSystem.current.SetSelectedGameObject (g);
 	}
 
 	public void PlaySelectedCharacter(){

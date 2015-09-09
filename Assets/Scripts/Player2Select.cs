@@ -76,6 +76,9 @@ public class Player2Select : MonoBehaviour {
 		
 		
 	}
+	public void SelectOnHover(GameObject g){
+		EventSystem.current.SetSelectedGameObject (g);
+	}
 	public void SelectActivate(string name){
 		
 		player2name = _dicPlayerNameByName[name];
