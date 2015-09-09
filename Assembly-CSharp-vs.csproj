@@ -56,16 +56,18 @@
      <Compile Include="Assets\Scripts\GameManager2.cs" />
      <Compile Include="Assets\Scripts\Move.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Player1Select.cs" />
+     <Compile Include="Assets\Scripts\Player2Select.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerKeys.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerName.cs" />
+     <Compile Include="Assets\Scripts\PlayerNumber.cs" />
      <Compile Include="Assets\Scripts\SceneManager.cs" />
-     <Compile Include="Assets\Scripts\Select.cs" />
      <Compile Include="Assets\Scripts\XDirection.cs" />
      <Compile Include="Assets\Scripts\YDirection.cs" />
      <Compile Include="Assets\test.cs" />
-     <None Include="Assets\Game\retro_computer\License - READ THIS.txt" />
+     <None Include="Assets\UI\Fonts\retro_computer\License - READ THIS.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -1,12 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager2.cs">
     <Files>
-      <File FileName="Assets\Scripts\XDirection.cs" Line="1" Column="8" />
-      <File FileName="Assets\Scripts\PlayerKeys.cs" Line="48" Column="22" />
-      <File FileName="Assets\Scripts\YDirection.cs" Line="1" Column="39" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="348" Column="5" />
-      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="201" Column="4" />
+      <File FileName="Assets\Scripts\SceneManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameManager2.cs" Line="388" Column="32" />
+      <File FileName="Assets\Scripts\Player2Select.cs" Line="37" Column="16" />
+      <File FileName="Assets\Scripts\Player1Select.cs" Line="44" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

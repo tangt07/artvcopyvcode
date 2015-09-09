@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour {
 	//need to pass Direction Facing and Attack to PlayerMovement Scripts
 
 	private Dictionary<PlayerName,GameObject> _dicPlayerPrefabByName = null;
+
 	
 
 	
@@ -99,13 +100,13 @@ public class GameManager : MonoBehaviour {
 
 		List<PlayerName> keyList = new List<PlayerName> (_dicPlayerPrefabByName.Keys);
 
-		if (Select.selectedPlayer == PlayerName.None) {
-			Select.selectedPlayer = PlayerName.Craig;
+		if (Player1Select.player1name == PlayerName.None) {
+			Player1Select.player1name = PlayerName.Craig;
 		}
 
 		keyList.Remove (PlayerName.None);
 		keyList.Remove (PlayerName.Killer);
-		keyList.Remove (Select.selectedPlayer);
+		keyList.Remove (Player1Select.player1name);
 		//assign random name from remaining names
 		int i = 0;
 		while (keyList.Count > 0) {
@@ -115,7 +116,7 @@ public class GameManager : MonoBehaviour {
 			i++;
 		}
 		//last opponent is killer
-		opponentList [i] = PlayerName.Killer;
+		//opponentList [i] = PlayerName.Killer;
 
 	}
 	void GetPlayer2AIInputs(){
@@ -167,7 +168,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	void InstantiatePlayer1(){
-		player1 = Instantiate(_dicPlayerPrefabByName [Select.selectedPlayer],new Vector3(-3f,-1f,0),Quaternion.identity) as GameObject;
+		player1 = Instantiate(_dicPlayerPrefabByName [Player1Select.player1name],new Vector3(-3f,-1f,0),Quaternion.identity) as GameObject;
 	}
 	void InstantiateOpponent(){
 		player2 = Instantiate(_dicPlayerPrefabByName[ opponentList[current_fight-1]],new Vector3(3f,-1f,0),Quaternion.identity) as GameObject;
@@ -184,8 +185,11 @@ public class GameManager : MonoBehaviour {
 		player1movement = player1.GetComponent<PlayerMovement> ();
 		player2movement = player2.GetComponent<PlayerMovement> ();
 		
-		player1movement.thisPlayer = Player.Player1;
-		player2movement.thisPlayer = Player.Player2;
+		player1movement.thisPlayer = PlayerNumber.Player1;
+		player2movement.thisPlayer = PlayerNumber.Player2;
+
+		player1movement.thisCharacter = Player1Select.player1name;
+		player2movement.thisCharacter = opponentList [current_fight - 1];
 		
 		player1anim = player1.GetComponent<Animator> ();
 		player2anim = player2.GetComponent<Animator> ();

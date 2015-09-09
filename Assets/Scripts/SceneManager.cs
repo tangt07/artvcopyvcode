@@ -1,15 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class SceneManager : MonoBehaviour {
+	public static int players;
+	public GameObject defaultbutton;
 
-	void ChangeScene(string levelindex){
-		Application.LoadLevel(levelindex);
+	void Update () {
+		if(EventSystem.current.currentSelectedGameObject == null){
+			EventSystem.current.SetSelectedGameObject (defaultbutton);
+			
+			
+		}
+		
 	}
-	public void ChangeToGame(){
-		ChangeScene ("Game");
+	public void CharacterSelect(int p){
+		players = p;
+		Application.LoadLevel("Player1Select");
 	}
-	public void ChangeToCharacterSelect(){
-		ChangeScene ("CharacterSelect");
+	public void ChangeScene(string scene){
+		Application.LoadLevel(scene);
+
 	}
+
+
 }
