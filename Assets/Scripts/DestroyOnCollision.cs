@@ -10,8 +10,8 @@ public class DestroyOnCollision : MonoBehaviour {
 		PlayerMovement other = col.gameObject.GetComponent<PlayerMovement>();
 		if (col.transform.root != transform.root) {
 
-			if (col.gameObject.tag == "Player" && !damage) {
-				damage = true;
+			if (col.gameObject.tag == "Player") {
+
 				if (!other.shieldup) {
 
 					col.gameObject.GetComponent<PlayerHealth>().Take_Damage ();
@@ -26,6 +26,6 @@ public class DestroyOnCollision : MonoBehaviour {
 		}
 	}
 	void OnTriggerExit2D(Collider2D col){
-		damage = false;
+
 	}
 }
