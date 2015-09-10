@@ -13,6 +13,8 @@ public class GameManager2 : MonoBehaviour {
 	public Text fightcountertext;
 	public Text restarttext;
 	public Text kotext;
+	public Text p1name;
+	public Text p2name;
 	public Image player1healthbar;
 	public Image player2healthbar;
 	RectTransform player1healthbarrt;
@@ -199,6 +201,9 @@ public class GameManager2 : MonoBehaviour {
 	
 	
 	void SetUpPlayers(){
+		p1name.text = Player1Select.player1name.ToString();
+		p2name.text = Player2Select.player2name.ToString();
+
 		player1health = player1.GetComponent<PlayerHealth> ();		
 		player2health = player2.GetComponent<PlayerHealth> ();
 		
