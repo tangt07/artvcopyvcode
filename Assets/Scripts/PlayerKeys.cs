@@ -178,7 +178,6 @@ public class PlayerKeys : MonoBehaviour {
 		//Debug.Log ("X:"+nextX);
 		currentX = nextX;
 	}
-	
 	void Verticalinput(){
 		if (currentY == YDirection.None) {
 			if (jumpkeydown) {

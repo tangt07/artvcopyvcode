@@ -14,6 +14,9 @@ public class SceneManager : MonoBehaviour {
 		}
 		
 	}
+	public void SelectOnHover(GameObject g){
+		EventSystem.current.SetSelectedGameObject (g);
+	}
 	public void CharacterSelect(int p){
 		players = p;
 		Application.LoadLevel("Player1Select");
