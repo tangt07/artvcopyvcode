@@ -1,6 +1,12 @@
-﻿struct Move{
+﻿public struct Move{
 	public Direction dir;
-	public Attack att;
+	public Attack atk;
+
+	public Move(Direction d, Attack a){
+		dir = d;
+		atk = a;
+	}
+
 
 
 }

@@ -308,6 +308,7 @@ public class GameManager2 : MonoBehaviour {
 					player1movement.enabled = true;
 					player2movement.enabled = true;
 				}
+
 				player1movement.currentDirection = player1keys.currentDirection;
 				player1movement.currentAttack = player1keys.currentAttack;
 				

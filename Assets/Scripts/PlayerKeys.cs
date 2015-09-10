@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerKeys : MonoBehaviour {
 	public KeyCode left;
@@ -8,6 +9,7 @@ public class PlayerKeys : MonoBehaviour {
 	public KeyCode block;
 	public KeyCode attack;
 	public KeyCode projectile;
+	public bool newmove;
 
 	bool leftkeydown;
 	bool rightkeydown;
@@ -19,37 +21,62 @@ public class PlayerKeys : MonoBehaviour {
 	bool rightkey;
 	bool jumpkey;
 	bool blockkey;
-	bool attackkey;
-	bool projectilekey;
 	bool leftkeyup;
 	bool rightkeyup;
 	bool jumpkeyup;
 	bool blockkeyup;
-	bool attackkeyup;
-	bool projectilekeyup;
+	//bool attackkey;
+	//bool projectilekey;
+	//bool attackkeyup;
+	//bool projectilekeyup;
 
-
-	
 	XDirection currentX = XDirection.None;
 	XDirection nextX = XDirection.None;
 	YDirection currentY = YDirection.None;
 	YDirection nextY = YDirection.None;
+	
+	private Dictionary<Direction,XDirection> _dicXdirByDir = null;
+	private Dictionary<Direction,YDirection> _dicYdirByDir = null;
 
 	public Direction currentDirection;
 	public Attack currentAttack;
+	public Move currentMove;
+	Direction nextDirection;
+	Attack nextAttack;
+	void Awake(){
+		
+		_dicXdirByDir = new Dictionary<Direction,XDirection> ();
+		_dicXdirByDir.Add (Direction.None, XDirection.None);
+		_dicXdirByDir.Add (Direction.Left, XDirection.Left);
+		_dicXdirByDir.Add (Direction.Right, XDirection.Right);
+		_dicXdirByDir.Add (Direction.Up, XDirection.None);
+		_dicXdirByDir.Add (Direction.Down, XDirection.None);
+		_dicXdirByDir.Add (Direction.LeftUp, XDirection.Left);
+		_dicXdirByDir.Add (Direction.RightUp, XDirection.Right);
+		_dicXdirByDir.Add (Direction.LeftDown, XDirection.Left);
+		_dicXdirByDir.Add (Direction.RightDown, XDirection.Right);
+		_dicXdirByDir.Add (Direction.Special, XDirection.Special);
 
-	// Use this for initialization
-	void Start () {
-	
+		_dicYdirByDir = new Dictionary<Direction,YDirection> ();
+		_dicYdirByDir.Add (Direction.None, YDirection.None);
+		_dicYdirByDir.Add (Direction.Left, YDirection.None);
+		_dicYdirByDir.Add (Direction.Right, YDirection.None);
+		_dicYdirByDir.Add (Direction.Up, YDirection.Up);
+		_dicYdirByDir.Add (Direction.Down, YDirection.Down);
+		_dicYdirByDir.Add (Direction.LeftUp, YDirection.Up);
+		_dicYdirByDir.Add (Direction.RightUp, YDirection.Up);
+		_dicYdirByDir.Add (Direction.LeftDown, YDirection.Down);
+		_dicYdirByDir.Add (Direction.RightDown, YDirection.Down);
+		_dicYdirByDir.Add (Direction.Special, YDirection.None);
+	}
+	void Start(){
+		currentDirection = Direction.None;
+		currentAttack = Attack.None;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GetPlayerInputs ();
-	
-	}
 
-	void GetPlayerInputs(){
 		//Inputs
 		
 		leftkeydown 	= 	Input.GetKeyDown(left);
@@ -62,170 +89,175 @@ public class PlayerKeys : MonoBehaviour {
 		rightkey	 	= 	Input.GetKey(right);
 		jumpkey		 	= 	Input.GetKey(jump);
 		blockkey	 	= 	Input.GetKey(block);
-		projectilekey	= 	Input.GetKey(projectile);
-		attackkey	 	= 	Input.GetKey (attack);
 		leftkeyup 		= 	Input.GetKeyUp(left);
 		rightkeyup 		= 	Input.GetKeyUp(right);
 		jumpkeyup 		= 	Input.GetKeyUp(jump);
 		blockkeyup 		= 	Input.GetKeyUp(block);
-		projectilekeyup = 	Input.GetKeyUp(projectile);
-		attackkeyup 	= 	Input.GetKeyUp (attack);
+		//projectilekey	= 	Input.GetKey(projectile);
+		//attackkey	 	= 	Input.GetKey (attack);
+		//projectilekeyup = 	Input.GetKeyUp(projectile);
+		//attackkeyup 	= 	Input.GetKeyUp (attack);
 		
 		//if any input, Change State (my keyboard can only handle 2 arrows at once)
 		//player1 directions and attacks
-		GetDirection ();
-		GetAttack ();
+		nextDirection = GetDirection (leftkeydown,rightkeydown,jumpkeydown,blockkeydown,leftkey,rightkey,jumpkey,blockkey,leftkeyup,rightkeyup,jumpkeyup,blockkeyup, currentDirection);
+		nextAttack = GetAttack (attackkeydown,projectilekeydown);
+
+
+		currentDirection = nextDirection;
+		currentAttack = nextAttack;
+		currentMove = new Move(currentDirection,currentAttack);
+	 
 		
 	}
-	void GetAttack(){
+	Attack GetAttack(bool attackkeydown, bool projectilekeydown){
 		if (attackkeydown && projectilekeydown) {
-			currentAttack = Attack.CombatProjectile;
+			return Attack.CombatProjectile;
 		}
 		if (attackkeydown && !projectilekeydown) {
-			currentAttack = Attack.Combat;
+			return Attack.Combat;
 		}
 		if (!attackkeydown && projectilekeydown) {
-			currentAttack = Attack.Projectile;
+			return Attack.Projectile;
 		}
 		if (!attackkeydown && !projectilekeydown) {
-			currentAttack = Attack.None;
+			return Attack.None;
 		}
+		//so it doesn't complain
+		return Attack.None;
+
 	}
-	void GetDirection(){
-		Horizontalinput (); //currentX updated
-		Verticalinput (); //currentY updated
+	Direction GetDirection(bool ld, bool rd, bool ud, bool dd, bool l, bool r, bool u, bool d, bool lu, bool ru, bool uu, bool du, Direction current = Direction.None){
+		XDirection currentX = Horizontalinput (_dicXdirByDir[current],ld,rd,l,r,lu,ru); //currentX updated
+		YDirection currentY = Verticalinput (_dicYdirByDir[current],ud,dd,u,d,uu,du); //currentY updated
+
 		if (currentX == XDirection.None && currentY == YDirection.None) {
-			currentDirection = Direction.None;
+			return Direction.None;
 		}
 		if (currentX == XDirection.None && currentY == YDirection.Up) {
-			currentDirection = Direction.Up;
+			return Direction.Up;
 		}
 		if (currentX == XDirection.None && currentY == YDirection.Down) {
-			currentDirection = Direction.Down;
+			return Direction.Down;
 		}
 		if (currentX == XDirection.Left && currentY == YDirection.None) {
-			currentDirection = Direction.Left;
+			return Direction.Left;
 		}
 		if (currentX == XDirection.Left && currentY == YDirection.Up) {
-			currentDirection = Direction.LeftUp;
+			return Direction.LeftUp;
 		}		
 		if (currentX == XDirection.Left && currentY == YDirection.Down) {
-			currentDirection = Direction.LeftDown;
+			return Direction.LeftDown;
 		}
 		if (currentX == XDirection.Right && currentY == YDirection.None) {
-			currentDirection = Direction.Right;
+			return Direction.Right;
 		}
 		if (currentX == XDirection.Right && currentY == YDirection.Up) {
-			currentDirection = Direction.RightUp;
+			return Direction.RightUp;
 		}		
 		if (currentX == XDirection.Right && currentY == YDirection.Down) {
-			currentDirection = Direction.RightDown;
+			return Direction.RightDown;
 		}if (currentX == XDirection.Special && currentY == YDirection.None) {
-			currentDirection = Direction.Special;
+			return Direction.Special;
 		}
-		//else... something's wrong... don't mess with current Direction
-		
-		
-		
-		
+		return current;
+
 	}
-	void Horizontalinput(){
-		if (currentX == XDirection.None) {
-			if (leftkeydown) {
-				nextX = XDirection.Left;
+	XDirection Horizontalinput(XDirection x, bool ld, bool rd, bool l, bool r, bool lu, bool ru){
+		if (x == XDirection.None) {
+			if (ld) {
+				return XDirection.Left;
 			}
-			if (rightkeydown) {
-				nextX = XDirection.Right;
+			if (rd) {
+				return XDirection.Right;
 			}
-			if(rightkeydown&&leftkeydown){
-				nextX = XDirection.Special;
-			}
-		}
-		if (currentX == XDirection.Left) {
-			if(rightkeydown){
-				nextX = XDirection.Right;
-			}
-			if(leftkeyup && !rightkey){
-				nextX = XDirection.None;
-			}
-			if(leftkeyup && rightkey){
-				nextX = XDirection.Right;
+			if(rd&&ld){
+				return XDirection.Special;
 			}
 		}
-		if (currentX == XDirection.Right) {
-			if(leftkeydown){
-				nextX = XDirection.Left;
+		if (x == XDirection.Left) {
+			if(rd){
+				return XDirection.Right;
 			}
-			if(rightkeyup && !leftkey){
-				nextX = XDirection.None;
+			if(lu && !r){
+				return XDirection.None;
 			}
-			if(rightkeyup && leftkey){
-				nextX = XDirection.Left;
+			if(lu && r){
+				return XDirection.Right;
 			}
 		}
-		if (currentX == XDirection.Special) {
-			if(rightkeyup && !leftkeyup){
-				nextX = XDirection.Left;
+		if (x == XDirection.Right) {
+			if(ld){
+				return XDirection.Left;
 			}
-			if(leftkeyup && !rightkeyup){
-				nextX = XDirection.Right;
+			if(ru && !l){
+				return XDirection.None;
 			}
-			if(leftkeyup && rightkeyup){
-				nextX = XDirection.None;
+			if(ru && l){
+				return XDirection.Left;
+			}
+		}
+		if (x == XDirection.Special) {
+			if(ru && !lu){
+				return XDirection.Left;
+			}
+			if(lu && !ru){
+				return XDirection.Right;
+			}
+			if(lu && ru){
+				return XDirection.None;
 			}
 			
 		}
-		//Debug.Log ("X:"+nextX);
-		currentX = nextX;
+		return x;
 	}
-	void Verticalinput(){
-		if (currentY == YDirection.None) {
-			if (jumpkeydown) {
-				nextY = YDirection.Up;
+	YDirection Verticalinput(YDirection y, bool ud, bool dd, bool u, bool d, bool uu, bool du){
+		if (y == YDirection.None) {
+			if (ud) {
+				return YDirection.Up;
 			}
-			if (blockkeydown) {
-				nextY = YDirection.Down;
+			if (dd) {
+				return YDirection.Down;
 			}
-			if(blockkeydown&&jumpkeydown){
-				nextY = YDirection.Special;
-			}
-		}
-		if (currentY == YDirection.Up) {
-			if(blockkeydown){
-				nextY = YDirection.Down;
-			}
-			if(jumpkeyup && !blockkey){
-				nextY = YDirection.None;
-			}
-			if(jumpkeyup && blockkey){
-				nextY = YDirection.Down;
+			if(dd&&ud){
+				return YDirection.Special;
 			}
 		}
-		if (currentY == YDirection.Down) {
-			if(jumpkeydown){
-				nextY = YDirection.Up;
+		if (y == YDirection.Up) {
+			if(dd){
+				return YDirection.Down;
 			}
-			if(blockkeyup && !jumpkey){
-				nextY = YDirection.None;
+			if(uu && !d){
+				return YDirection.None;
 			}
-			if(blockkeyup && jumpkey){
-				nextY = YDirection.Up;
+			if(uu && d){
+				return YDirection.Down;
 			}
 		}
-		if (currentY == YDirection.Special) {
-			if(jumpkeyup && !blockkeyup){
-				nextY = YDirection.Down;
+		if (y == YDirection.Down) {
+			if(ud){
+				return YDirection.Up;
 			}
-			if(jumpkeyup && !blockkeyup){
-				nextY = YDirection.Up;
+			if(du && !u){
+				return YDirection.None;
 			}
-			if(jumpkeyup && blockkeyup){
-				nextY = YDirection.None;
+			if(du && u){
+				return YDirection.Up;
+			}
+		}
+		if (y == YDirection.Special) {
+			if(uu && !du){
+				return YDirection.Down;
+			}
+			if(!uu && du){
+				return YDirection.Up;
+			}
+			if(uu && du){
+				return YDirection.None;
 			}
 			
 		}
-		//Debug.Log ("Y:"+nextY);
-		currentY = nextY;
+		return y;
 	}
 
 }
