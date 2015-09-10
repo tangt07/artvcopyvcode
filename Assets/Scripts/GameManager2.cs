@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class GameManager2 : MonoBehaviour {
 	public GameObject craigprefab;
@@ -36,17 +37,23 @@ public class GameManager2 : MonoBehaviour {
 	public float timer;
 	public string timerFormatted;
 	
-	
+	public Image pausepanel;
+	public Button resumebutton;
 	float waittime=0;
 	bool aiprojectilekeydown;
 	bool firstframe;
 	bool nextframe;
 	bool roundover;
 	bool pause=false;
-	
+	bool resume = false;
+	bool resumeset = false;
 	PlayerMovement player1movement,player2movement;
 	int numfights;
+	public Image player11win;
+	public Image player12win;
 	
+	public Image player21win;	
+	public Image player22win;
 	
 	XDirection currentX = XDirection.None;
 	XDirection nextX = XDirection.None;
@@ -230,6 +237,12 @@ public class GameManager2 : MonoBehaviour {
 		current_round = 1;
 		player1_wins = 0;
 		player2_wins = 0;
+		player11win.enabled =false;
+		player12win.enabled =false;
+		player21win.enabled =false;
+		player22win.enabled =false;
+
+
 		firstframe = true;
 		fightcountertext.enabled = false;
 		restarttext.enabled = false;
@@ -248,8 +261,8 @@ public class GameManager2 : MonoBehaviour {
 			ResetTimer();
 			
 			DisplayTimer ();
-			
-			
+
+
 			
 			player1anim.SetTrigger("Restart");
 			player2anim.SetTrigger("Restart");
@@ -315,6 +328,10 @@ public class GameManager2 : MonoBehaviour {
 				
 			}
 			
+			UpdateHealthbar();
+			
+
+			
 			StopCoroutine("StartTimer");
 			//round is over
 			
@@ -322,7 +339,7 @@ public class GameManager2 : MonoBehaviour {
 				//K.O. text
 				kotext.text = "K.O.";
 				kotext.enabled = true;
-				yield return new WaitForSeconds(2);
+				yield return new WaitForSeconds(3);
 				kotext.enabled = false;
 			}
 			
@@ -332,24 +349,41 @@ public class GameManager2 : MonoBehaviour {
 			if(player1health.current_health < player2health.current_health){
 				//player2 wins round
 				//K.O. text
+				player2_wins++;
+				if(player2_wins ==1){
+					player21win.enabled =true;
+				}
+				if(player2_wins ==2){
+					player22win.enabled =true;
+				}
 				kotext.text = "Player 2 Wins";
 				kotext.enabled = true;
-				yield return new WaitForSeconds(2);
+				player2anim.SetTrigger("Win");
+				yield return new WaitForSeconds(3);
 				kotext.enabled = false;
 
-				player2_wins++;
-				player2anim.SetTrigger("Win");
+
+
 				current_round++;
 			}
 			if(player1health.current_health > player2health.current_health){
 				//player1 wins round
 				//K.O. text
+				player1_wins++;		
+				if(player1_wins ==1){
+					player11win.enabled =true;
+				}
+				if(player1_wins ==2){
+					player12win.enabled =true;
+				}
+
 				kotext.text = "Player 1 Wins";
 				kotext.enabled = true;
-				yield return new WaitForSeconds(2);
-				kotext.enabled = false;
-				player1_wins++;				
 				player1anim.SetTrigger("Win");
+				yield return new WaitForSeconds(3);
+				kotext.enabled = false;
+						
+
 				current_round++;
 			}
 			if(player1health.current_health == player2health.current_health){
@@ -378,7 +412,6 @@ public class GameManager2 : MonoBehaviour {
 				
 			}
 			
-			
 			player1health.Reset_health();
 			player2health.Reset_health();
 			
@@ -401,6 +434,11 @@ public class GameManager2 : MonoBehaviour {
 					current_fight = 1;
 					player1_wins = 0;
 					player2_wins = 0;
+					player11win.enabled =false;
+					player12win.enabled =false;
+					player21win.enabled =false;
+					player22win.enabled =false;
+
 				}
 				
 				if(Input.GetKeyUp(KeyCode.Space)){
@@ -435,18 +473,41 @@ public class GameManager2 : MonoBehaviour {
 		while (true) {
 			
 			if (Input.GetKeyDown (KeyCode.Return)) {
-				pause = !pause;
+				pause = true;
 			}
 			if (pause) {
 				Time.timeScale = 0;
-				
+				pausepanel.gameObject.SetActive(true);
+				if(!resumeset){
+					resumeset = true;
+					EventSystem.current.SetSelectedGameObject (resumebutton.gameObject);
+				}
+				if(resume){
+					pause = false;
+				}
 			}
 			if (!pause) {
+				resumeset = false;
+				resume = false;
+				pausepanel.gameObject.SetActive(false);
 				Time.timeScale = 1;
 				
 			}
 			yield return null;
 		}
+	}
+	public void SelectOnHover(GameObject g){
+		EventSystem.current.SetSelectedGameObject (g);
+	}
+	public void Resume(){
+
+		resume = true;
+	}
+	public void Exit(){
+		StopAllCoroutines ();
+		Time.timeScale = 1;
+		pausepanel.gameObject.SetActive(false);
+		Application.LoadLevel ("StartScreen");
 	}
 	void UpdateHealthbar(){
 		//Healthbar Update

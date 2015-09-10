@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 35fb3a0471afcb44bb5ea4b344570426
-timeCreated: 1440874304
+guid: 5b51b2bb62829f5418e3ca2e56c370c0
+timeCreated: 1441882442
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -810,9 +810,9 @@ TextureImporter:
     - name: Amy_win2
       rect:
         serializedVersion: 2
-        x: 477
+        x: 480
         y: 128
-        width: 38
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -1400,7 +1400,7 @@ TextureImporter:
     - name: Will_death1
       rect:
         serializedVersion: 2
-        x: 319
+        x: 320
         y: 0
         width: 32
         height: 32

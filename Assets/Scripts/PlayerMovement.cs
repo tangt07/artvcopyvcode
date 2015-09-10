@@ -55,19 +55,7 @@ public class PlayerMovement : MonoBehaviour {
 			anim.SetBool("FacingLeft",false);			
 		}
 		
-		if(currentAttack == Attack.Combat){
-			anim.SetTrigger("Attack");
-		}
-		
-		if(grounded && currentAttack == Attack.Projectile){
-			anim.SetTrigger("Projectile");
-			SpawnProjectile();
-		}
-		
-		if(currentAttack == Attack.CombatProjectile){
-			anim.SetTrigger("Projectile");
-			SpawnProjectile();
-		}
+
 		if (grounded && (currentDirection == Direction.Up || currentDirection == Direction.RightUp || currentDirection == Direction.LeftUp)) {
 			anim.SetBool ("Grounded", false);
 			groundchange = true;
@@ -79,9 +67,6 @@ public class PlayerMovement : MonoBehaviour {
 		} else {
 			anim.SetFloat("Yvelocity", rb.velocity.y);
 		}
-		shieldup = (grounded && 
-		    (currentFacing == Facing.Right && (currentDirection == Direction.Left || currentDirection == Direction.LeftDown)) ||
-			(currentFacing == Facing.Left && (currentDirection == Direction.Right || currentDirection == Direction.RightDown)));
 
 
 
@@ -177,6 +162,7 @@ public class PlayerMovement : MonoBehaviour {
 		Vector2 tempv;
 
 		tempv = rb.velocity;
+
 		if (groundchange) {
 			groundchange = false;
 			tempv.y = jumpspeed;
@@ -188,6 +174,22 @@ public class PlayerMovement : MonoBehaviour {
 		cacheDirection = currentDirection;
 		cacheFacing = currentFacing;
 		cacheAttack = currentAttack;
+		shieldup = (grounded && 
+		            (cacheFacing == Facing.Right && (cacheDirection == Direction.Left || cacheDirection == Direction.LeftDown)) ||
+		            (cacheFacing == Facing.Left && (cacheDirection == Direction.Right || cacheDirection == Direction.RightDown)));
+		if(cacheAttack == Attack.Combat){
+			anim.SetTrigger("Attack");
+		}
+		
+		if(grounded && cacheAttack == Attack.Projectile){
+			anim.SetTrigger("Projectile");
+			SpawnProjectile();
+		}
+		
+		if(cacheAttack == Attack.CombatProjectile){
+			anim.SetTrigger("Projectile");
+			SpawnProjectile();
+		}
 		if (grounded&&(cacheDirection == Direction.None || cacheDirection == Direction.Down || cacheDirection == Direction.LeftDown || cacheDirection == Direction.RightDown)) {
 			tempv.x = 0;
 		}
