@@ -14,7 +14,8 @@ public class DestroyOnCollision : MonoBehaviour {
 
 				if (!other.shieldup) {
 
-					col.gameObject.GetComponent<PlayerHealth>().Take_Damage ();
+					col.gameObject.GetComponent<PlayerHealth>().Take_Damage();
+
 				}
 
 

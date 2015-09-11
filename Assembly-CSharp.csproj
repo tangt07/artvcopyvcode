@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerName.cs" />
      <Compile Include="Assets\Scripts\PlayerNumber.cs" />
+     <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\SceneManager.cs" />
      <Compile Include="Assets\Scripts\XDirection.cs" />
      <Compile Include="Assets\Scripts\YDirection.cs" />
