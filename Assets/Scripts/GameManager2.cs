@@ -73,7 +73,9 @@ public class GameManager2 : MonoBehaviour {
 	private Dictionary<PlayerName,GameObject> _dicPlayerPrefabByName = null;
 	
 	
-	
+	public float minsize = 3f;//maxzoom
+	public Camera cam;
+	float camsize;
 	
 	void Awake(){
 		_dicPlayerPrefabByName = new Dictionary<PlayerName, GameObject> ();
@@ -85,7 +87,9 @@ public class GameManager2 : MonoBehaviour {
 		
 	}
 	
-	
+	void Update(){
+
+	}
 	
 	// Use this for initialization
 	void Start () {
@@ -301,7 +305,24 @@ public class GameManager2 : MonoBehaviour {
 			StartCoroutine("StartTimer");
 			
 			while(timer>0 && player1health.current_health>0 && player2health.current_health > 0){
-				
+				camsize = (Mathf.Abs(player1.transform.position.x - player2.transform.position.x)+1)/2f/720f*450f;
+				if (camsize <= minsize) {
+					cam.orthographicSize = minsize;
+					float min = Mathf.Min(player1.transform.position.x,player2.transform.position.x);
+					float max = Mathf.Max(player1.transform.position.x,player2.transform.position.x);
+					//6*720/450 = 9.6
+					if(min < cam.transform.position.x - 4.3f){
+
+						cam.transform.position = new Vector3(min+4.3f ,-3f,-10f);
+					}
+					if(max > cam.transform.position.x + 4.3f){
+						cam.transform.position = new Vector3(max-4.3f ,-3f,-10f);
+					}
+					
+				} else {
+					cam.transform.position = new Vector3((player1.transform.position.x+player2.transform.position.x)/2f,camsize-6, -10f);
+					cam.orthographicSize = camsize;
+				}
 				player1anim.SetInteger("Health",player1health.current_health);				
 				player2anim.SetInteger("Health",player2health.current_health);
 				
