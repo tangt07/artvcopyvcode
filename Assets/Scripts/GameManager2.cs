@@ -33,7 +33,7 @@ public class GameManager2 : MonoBehaviour {
 	GameObject player1;
 	GameObject player2;
 	GameObject opponent;
-	PlayerName[] opponentList = new PlayerName[3];
+	List<PlayerName> opponentList = new List<PlayerName>();
 	public int player1_wins;
 	public int player2_wins;
 	public float timer;
@@ -83,7 +83,8 @@ public class GameManager2 : MonoBehaviour {
 		_dicPlayerPrefabByName.Add (PlayerName.Amy, amyprefab);
 		_dicPlayerPrefabByName.Add (PlayerName.Will, willprefab);
 		_dicPlayerPrefabByName.Add (PlayerName.Killer, killerprefab);
-		
+
+
 		
 	}
 	
@@ -93,15 +94,17 @@ public class GameManager2 : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		if (Player1Select.player1name == PlayerName.None) {
-			Player1Select.player1name = PlayerName.Craig;
+		if (Player2Select.player1name == PlayerName.None) {
+			Player2Select.player1name = PlayerName.Craig;
 		}
 		if (Player2Select.player2name == PlayerName.None) {
 			Player2Select.player2name = PlayerName.Will;
 		}
-		if (SceneManager.players == 0||SceneManager.players==2) {
+		if (SceneManager.players == 0) {
+			SceneManager.players = 1;
+		}
+		if (SceneManager.players==2) {
 			numfights = 1;
-			SceneManager.players = 2;
 		}
 		if (SceneManager.players == 1) {
 			numfights = 3;
@@ -129,29 +132,29 @@ public class GameManager2 : MonoBehaviour {
 		
 		keyList.Remove (PlayerName.None);
 		keyList.Remove (PlayerName.Killer);
-		keyList.Remove (Player1Select.player1name);
+		keyList.Remove (Player2Select.player1name);
 		//assign random name from remaining names
 		int i = 0;
 		while (keyList.Count > 0) {
 			randomnumber = Random.Range (0, keyList.Count);
-			opponentList [i] = keyList [randomnumber];
+			opponentList.Add(keyList [randomnumber]);
 			keyList.Remove (keyList [randomnumber]);
-			i++;
 		}
 		//last opponent is killer
-		opponentList [i] = PlayerName.Killer;
+		opponentList.Add(PlayerName.Killer);
 
 
 	}
 	void GetPlayer2AIInputs(){
 		//AI
+		distance = Mathf.Abs (player1.transform.position.x - player2.transform.position.x);
 		if (nextframe) {
 			nextframe = false;
 			player2movement.currentAttack = Attack.None;
 		}
-		if (!nextframe) {
-			if(distance > 3.5 && waittime > 1){
-				waittime=0;
+		if (!nextframe && waittime > 0.2f) {
+			waittime = 0;
+			if(distance > 3.5 ){
 				player2movement.currentAttack = Attack.Projectile;
 				nextframe=true;
 				
@@ -192,7 +195,7 @@ public class GameManager2 : MonoBehaviour {
 		}
 	}
 	void InstantiatePlayer1(){
-		player1 = Instantiate(_dicPlayerPrefabByName [Player1Select.player1name],new Vector3(-3f,-1f,0),Quaternion.identity) as GameObject;
+		player1 = Instantiate(_dicPlayerPrefabByName[Player2Select.player1name],new Vector3 (-3f, -1f, 0), Quaternion.identity) as GameObject;
 	}
 	void InstantiateOpponent(){
 		if (SceneManager.players == 1) {
@@ -205,8 +208,7 @@ public class GameManager2 : MonoBehaviour {
 	
 	
 	void SetUpPlayers(){
-		p1name.text = Player1Select.player1name.ToString();
-		p2name.text = Player2Select.player2name.ToString();
+
 
 		player1health = player1.GetComponent<PlayerHealth> ();		
 		player2health = player2.GetComponent<PlayerHealth> ();
@@ -216,13 +218,21 @@ public class GameManager2 : MonoBehaviour {
 		
 		player1movement = player1.GetComponent<PlayerMovement> ();
 		player2movement = player2.GetComponent<PlayerMovement> ();
-		
+
+
 		player1movement.thisPlayer = PlayerNumber.Player1;
 		player2movement.thisPlayer = PlayerNumber.Player2;
 		
-		player1movement.thisCharacter = Player1Select.player1name;
-		player2movement.thisCharacter = opponentList [current_fight - 1];
-		
+		player1movement.thisCharacter = Player2Select.player1name;
+		if (SceneManager.players == 1) {
+			player2movement.thisCharacter = opponentList [current_fight - 1];
+		} else {
+			player2movement.thisCharacter = Player2Select.player2name;
+		}
+		p1name.text = player1movement.thisCharacter.ToString();
+		p2name.text = player2movement.thisCharacter.ToString();
+
+
 		player1anim = player1.GetComponent<Animator> ();
 		player2anim = player2.GetComponent<Animator> ();
 		
@@ -337,10 +347,12 @@ public class GameManager2 : MonoBehaviour {
 
 				player1movement.currentDirection = player1keys.currentDirection;
 				player1movement.currentAttack = player1keys.currentAttack;
-				
-				player2movement.currentDirection = player2keys.currentDirection;
-				player2movement.currentAttack = player2keys.currentAttack;
-				
+					if(SceneManager.players == 2){
+					player2movement.currentDirection = player2keys.currentDirection;
+					player2movement.currentAttack = player2keys.currentAttack;
+				}else{
+					GetPlayer2AIInputs();
+				}
 				//change facing if switch sides
 				FlipSprites();
 				
@@ -391,7 +403,7 @@ public class GameManager2 : MonoBehaviour {
 
 
 
-				current_round++;
+
 			}
 			if(player1health.current_health > player2health.current_health){
 				//player1 wins round
@@ -411,21 +423,61 @@ public class GameManager2 : MonoBehaviour {
 				kotext.enabled = false;
 						
 
-				current_round++;
 			}
 			if(player1health.current_health == player2health.current_health){
 				//tie nothing changes
-				current_round++;
 			}
+
+			current_round++;
 			if(player2_wins >=2){
+				player1_wins = 0;
+				player2_wins = 0;
+				player11win.enabled =false;
+				player12win.enabled =false;
+				player21win.enabled =false;
+				player22win.enabled =false;
 				current_fight++;
-				//you lose
-				//continue?
-				Debug.Log("You Lose!");
-				
+			
+				if(SceneManager.players == 1){
+
+					restarttext.text = "Press Enter for Rematch\nPress Space to End";
+					restarttext.enabled = true;
+					StopCoroutine ("Pause");
+					
+					
+					while(!(Input.GetKeyUp(KeyCode.Return)||Input.GetKeyUp(KeyCode.Space))){
+						yield return null;
+					}
+					if(Input.GetKeyUp(KeyCode.Return)){
+						//Rematch
+						current_fight--;
+						player1_wins = 0;
+						player2_wins = 0;
+						player11win.enabled =false;
+						player12win.enabled =false;
+						player21win.enabled =false;
+						player22win.enabled =false;
+						
+					}
+					
+					if(Input.GetKeyUp(KeyCode.Space)){
+						//Title
+						Application.LoadLevel("StartScreen");
+					}
+					
+					
+					StartCoroutine ("Pause");
+				}
+
 			}
 			if(player1_wins >= 2){
 				current_fight++;
+				player1_wins = 0;
+				player2_wins = 0;
+				player11win.enabled =false;
+				player12win.enabled =false;
+				player21win.enabled =false;
+				player22win.enabled =false;
 				if(current_fight <= 3){
 					Destroy(player2);
 					InstantiateOpponent();
@@ -445,7 +497,7 @@ public class GameManager2 : MonoBehaviour {
 			
 			UpdateHealthbar();
 			
-			if(current_fight>numfights&&(player1_wins ==2 || player2_wins ==2)){
+			if(current_fight>numfights){
 
 				restarttext.text = "Press Enter for Rematch\nPress Space to End";
 				restarttext.enabled = true;
@@ -465,6 +517,9 @@ public class GameManager2 : MonoBehaviour {
 					player12win.enabled =false;
 					player21win.enabled =false;
 					player22win.enabled =false;
+					Destroy(player2);
+					InstantiateOpponent();
+					SetUpPlayers ();
 
 				}
 				
@@ -538,8 +593,8 @@ public class GameManager2 : MonoBehaviour {
 	}
 	void UpdateHealthbar(){
 		//Healthbar Update
-		player1healthbarrt.sizeDelta = new Vector2(player1health.current_health * 2.0f,30f);	
-		player2healthbarrt.sizeDelta = new Vector2(player2health.current_health * 2.0f,30f);
+		player1healthbar.rectTransform.sizeDelta = new Vector2(player1health.current_health * 2.0f,30f);	
+		player2healthbar.rectTransform.sizeDelta = new Vector2(player2health.current_health * 2.0f,30f);
 		
 	}
 	

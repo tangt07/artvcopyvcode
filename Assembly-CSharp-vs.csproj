@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Facing.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameManager2.cs" />
+     <Compile Include="Assets\Scripts\GameType.cs" />
      <Compile Include="Assets\Scripts\Move.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Player1Select.cs" />

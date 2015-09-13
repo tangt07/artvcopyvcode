@@ -11,15 +11,24 @@ public class Player2Select : MonoBehaviour {
 	public Button willbutton;
 	public Button killerbutton;
 	
+	public GameObject p1pickimage;
+	public GameObject p2pickimage;
+	
 	public Text charName;
 	public Text charInfo;
+
+	public static PlayerName player2name = PlayerName.None;
+
+	public static PlayerName player1name = PlayerName.None;
+
+	int player_num = 1;
+
 	private Dictionary<PlayerName,Button> _dicButtonByName = null;
 	
 	private Dictionary<string,PlayerName> _dicPlayerNameByName = null;
 	
 	
-	public static PlayerName player2name = PlayerName.None;
-	
+
 	
 	void Awake(){
 		_dicButtonByName = new Dictionary<PlayerName, Button> ();
@@ -38,21 +47,27 @@ public class Player2Select : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
+		
+		p1pickimage.SetActive(true);
+		p2pickimage.SetActive(false);
+
 		if (SceneManager.players == 0) {
 			SceneManager.players = 2;
 		}
 		if (SceneManager.players == 1) {
 			killerbutton.gameObject.SetActive(false);
 		}
-		if (Player1Select.player1name == null || Player1Select.player1name == PlayerName.None) {
-			Player1Select.player1name = PlayerName.Craig;
-		}
-		_dicButtonByName[Player1Select.player1name].interactable = false;
+
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (player_num == 2) {
+			p1pickimage.SetActive(false);
+			p2pickimage.SetActive(true);
+		}
+
 		if (EventSystem.current.currentSelectedGameObject == null) {
 			EventSystem.current.SetSelectedGameObject (craigbutton.gameObject);
 		}
@@ -80,11 +95,28 @@ public class Player2Select : MonoBehaviour {
 		EventSystem.current.SetSelectedGameObject (g);
 	}
 	public void SelectActivate(string name){
-		
-		player2name = _dicPlayerNameByName[name];
-		
-		Application.LoadLevel ("Game");
-		
+
+
+		//Player.players.Add(player_num,new Player());
+		//Player.players[player_num].name = _dicPlayerNameByName[name];
+
+		if (player_num == 1) {
+
+
+			player1name = _dicPlayerNameByName[name];
+			_dicButtonByName[player1name].interactable = false;
+		}
+		if (player_num == 2) {
+			player2name = _dicPlayerNameByName[name];
+		}
+
+
+
+		if (player_num == SceneManager.players) {
+			Application.LoadLevel ("Game");
+		} else {
+			player_num++;
+		}
 		
 		
 	}

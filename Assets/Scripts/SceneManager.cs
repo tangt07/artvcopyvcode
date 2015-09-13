@@ -19,7 +19,7 @@ public class SceneManager : MonoBehaviour {
 	}
 	public void CharacterSelect(int p){
 		players = p;
-		Application.LoadLevel("Player1Select");
+		Application.LoadLevel("Player2Select");
 	}
 	public void ChangeScene(string scene){
 		Application.LoadLevel(scene);
