@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.EventSystems;
 
 public class SceneManager : MonoBehaviour {
+
 	public static int players;
 	public GameObject defaultbutton;
 

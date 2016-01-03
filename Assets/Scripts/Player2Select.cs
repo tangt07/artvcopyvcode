@@ -10,7 +10,10 @@ public class Player2Select : MonoBehaviour {
 	public Button amybutton;
 	public Button willbutton;
 	public Button killerbutton;
-	
+	public Button ryanbutton;
+
+	GameObject firstbutton;
+
 	public GameObject p1pickimage;
 	public GameObject p2pickimage;
 	
@@ -36,13 +39,14 @@ public class Player2Select : MonoBehaviour {
 		_dicButtonByName.Add (PlayerName.Amy, amybutton);
 		_dicButtonByName.Add (PlayerName.Will, willbutton);
 		_dicButtonByName.Add (PlayerName.Killer, killerbutton);
+		_dicButtonByName.Add (PlayerName.Ryan, ryanbutton);
 		
 		_dicPlayerNameByName = new Dictionary<string, PlayerName> ();
 		_dicPlayerNameByName.Add ("Craig", PlayerName.Craig);
 		_dicPlayerNameByName.Add ("Amy", PlayerName.Amy);
 		_dicPlayerNameByName.Add ("Will", PlayerName.Will);
 		_dicPlayerNameByName.Add ("Killer", PlayerName.Killer);
-		
+		_dicPlayerNameByName.Add ("Ryan", PlayerName.Ryan);
 		
 	}
 	// Use this for initialization
@@ -52,10 +56,16 @@ public class Player2Select : MonoBehaviour {
 		p2pickimage.SetActive(false);
 
 		if (SceneManager.players == 0) {
+			firstbutton = craigbutton.gameObject;
 			SceneManager.players = 2;
 		}
 		if (SceneManager.players == 1) {
+			firstbutton = amybutton.gameObject;
 			killerbutton.gameObject.SetActive(false);
+			craigbutton.gameObject.SetActive(false);
+			willbutton.gameObject.SetActive(false);
+			EventSystem.current.SetSelectedGameObject (firstbutton);
+
 		}
 
 		
@@ -69,7 +79,7 @@ public class Player2Select : MonoBehaviour {
 		}
 
 		if (EventSystem.current.currentSelectedGameObject == null) {
-			EventSystem.current.SetSelectedGameObject (craigbutton.gameObject);
+			EventSystem.current.SetSelectedGameObject (firstbutton);
 		}
 		if (EventSystem.current.currentSelectedGameObject == craigbutton.gameObject) {
 			charName.text = "Craig the Copywriter";
@@ -87,7 +97,10 @@ public class Player2Select : MonoBehaviour {
 			charName.text = "The Idea Killer";
 			charInfo.text ="The Idea Killer hides in the dark corners of the creative world,\nwaiting patiently for the perfect time to strike -- epiphanies. He\ngobbles them up and spits them back out, taking pleasure in the\nsoul-crushing disappointment of Creatives. Even great ideas don't\nstand a chance, as he can tear them down with little more than a\nconfused glance, or a "+'"'+"meh"+'"'+" expression. He reviles creativity, but\ndoesn't hesitate to use it himself -- to kill great ideas.";
 		}
-		
+		if (EventSystem.current.currentSelectedGameObject == ryanbutton.gameObject) {
+			charName.text = "Ryan??";
+			charInfo.text ="??";
+		}
 		
 		
 	}

@@ -268,8 +268,8 @@ public class GameManager : MonoBehaviour {
 
 			while(timer>0 && player1health.current_health>0 && player2health.current_health > 0){
 
-				player1anim.SetInteger("Health",player1health.current_health);				
-				player2anim.SetInteger("Health",player2health.current_health);
+				player1anim.SetFloat("Health",player1health.current_health);				
+				player2anim.SetFloat("Health",player2health.current_health);
 
 				if(pause){
 					player1movement.enabled=false;

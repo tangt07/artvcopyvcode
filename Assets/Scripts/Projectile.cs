@@ -1,23 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public struct Projectile  {
-	public GameObject go;
-	public Facing facing;
+public class Projectile : MonoBehaviour {
+	float _rotation;
+	public float rotation {
+		get { return _rotation; }
+		set { _rotation = value; }
+	}
+	float _velocity;
+	public float velocity {
+		get { return _velocity; }
+		set { _velocity = value; }
+	}
+	Rigidbody2D prb;
 
-	public Projectile(GameObject g, Facing f){
-		go = g;
-		facing = f;
+	void Start(){
+		prb = GetComponent<Rigidbody2D> ();
+
 	}
 
+	void FixedUpdate(){
+		prb.MoveRotation(prb.rotation+_rotation*Time.fixedDeltaTime);
+		prb.velocity = new Vector2(_velocity,0);
+	}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    
 }

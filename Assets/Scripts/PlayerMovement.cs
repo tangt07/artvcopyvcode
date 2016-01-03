@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour {
 	public bool groundchange = false;
 
 	public GameObject projectileprefab;
+	public GameObject genericprojectileprefab;
+	public Sprite sprite;
 	GameObject projectilecopy;
 
 	public float maxforwardvelocity = 3f;
@@ -30,6 +32,9 @@ public class PlayerMovement : MonoBehaviour {
 	public List<Projectile> projectileList = new List<Projectile> ();
 	public bool damage;
 	public float jumpspeed = 11f;
+
+	public int numprojectiles;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -46,14 +51,14 @@ public class PlayerMovement : MonoBehaviour {
 			anim.SetTrigger("Attack");
 		}
 		
-		if(grounded && currentAttack == Attack.Projectile){
+		if(currentAttack == Attack.Projectile && numprojectiles > 0){
 			anim.SetTrigger("Projectile");
-			projectileList.Add(new Projectile(SpawnProjectile(currentFacing),currentFacing)); 
+			SpawnProjectile ();
 		}
 		
 		if(currentAttack == Attack.CombatProjectile){
 			anim.SetTrigger("Projectile");
-			projectileList.Add(new Projectile(SpawnProjectile(currentFacing),currentFacing)); 
+			SpawnProjectile ();
 		}
 
 		SetAnimDirectionBools (currentDirection);
@@ -61,41 +66,29 @@ public class PlayerMovement : MonoBehaviour {
 		SetFacingBools (currentFacing);
 
 	}
-	GameObject SpawnProjectile(Facing currentFacing){
-
-		if (currentFacing == Facing.Right) {
-			projectilecopy = Instantiate (projectileprefab, transform.position + .5f * transform.right, Quaternion.identity) as GameObject;
-
-		}
-		if (currentFacing == Facing.Left) {
-			projectilecopy = Instantiate (projectileprefab, transform.position - .5f * transform.right, Quaternion.identity) as GameObject;
-
-		}
-		return projectilecopy;
-	}
-
-	void MoveProjectiles(List<Projectile> projectileList){
-
-		foreach(Projectile projectile in projectileList){
-			if(projectile.go){
-				Rigidbody2D prb = projectile.go.GetComponent<Rigidbody2D>();
-
-				
-				if (projectile.facing == Facing.Right) {
-					prb.MoveRotation(prb.rotation-720f*Time.fixedDeltaTime);
-					prb.velocity = new Vector2(10f,0);
-				}
-				if (projectile.facing == Facing.Left) {
-					prb.MoveRotation(prb.rotation+720f*Time.fixedDeltaTime);
-					prb.velocity = new Vector2(-10f,0);
-				}
+	void SpawnProjectile(){
+		projectilecopy = GameObjectPoolManager.current.GetPooledObject ();
+		if (projectilecopy) {
+			Projectile behavior = projectilecopy.GetComponent<Projectile> ();
+		
+			if (currentFacing == Facing.Right) {
+				projectilecopy.transform.position = transform.position + .5f * transform.right;
+				behavior.rotation = -720f;
+				behavior.velocity = 10f;
 			}
+			if (currentFacing == Facing.Left) {
+				projectilecopy.transform.position = transform.position - .5f * transform.right;
+				behavior.rotation = 720f;
+				behavior.velocity = -10f;
+			}
+			projectilecopy.GetComponent<SpriteRenderer> ().sprite = sprite;
+			projectilecopy.SetActive (true);
 
+			numprojectiles--;
 		}
-		projectileList.RemoveAll (projectile => projectile.go == null);
-
-
 	}
+
+
 	public void SetJumpingBools(bool grounded, Direction currentDirection){
 		if (grounded && (currentDirection == Direction.Up || currentDirection == Direction.RightUp || currentDirection == Direction.LeftUp)) {
 			anim.SetBool ("Grounded", false);
@@ -191,7 +184,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		tempv = rb.velocity;
 
-		MoveProjectiles (projectileList);
+	
 		
 
 		if (groundchange) {

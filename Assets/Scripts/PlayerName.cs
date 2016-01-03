@@ -1,1 +1,1 @@
-﻿public enum PlayerName{None,Craig,Amy,Will,Killer};
+﻿public enum PlayerName{None,Craig,Amy,Will,Killer,Ryan};

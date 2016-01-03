@@ -1,0 +1,643 @@
+fileFormatVersion: 2
+guid: f9cd2b46223415f4e8929b9c9d663971
+timeCreated: 1451104345
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Ryan_SpriteSheet_0
+    21300002: Ryan_SpriteSheet_1
+    21300004: Ryan_SpriteSheet_2
+    21300006: Ryan_SpriteSheet_3
+    21300008: Ryan_SpriteSheet_4
+    21300010: Ryan_SpriteSheet_5
+    21300012: Ryan_SpriteSheet_6
+    21300014: Ryan_SpriteSheet_7
+    21300016: Ryan_SpriteSheet_8
+    21300018: Ryan_SpriteSheet_9
+    21300020: Ryan_SpriteSheet_10
+    21300022: Ryan_SpriteSheet_11
+    21300024: Ryan_SpriteSheet_12
+    21300026: Ryan_SpriteSheet_13
+    21300028: Ryan_SpriteSheet_14
+    21300030: Ryan_SpriteSheet_15
+    21300032: Ryan_SpriteSheet_16
+    21300034: Ryan_SpriteSheet_17
+    21300036: Ryan_SpriteSheet_18
+    21300038: Ryan_SpriteSheet_19
+    21300040: Ryan_SpriteSheet_20
+    21300042: Ryan_SpriteSheet_21
+    21300044: Ryan_SpriteSheet_22
+    21300046: Ryan_SpriteSheet_23
+    21300048: Ryan_SpriteSheet_24
+    21300050: Ryan_SpriteSheet_25
+    21300052: Ryan_SpriteSheet_26
+    21300054: Ryan_SpriteSheet_27
+    21300056: Ryan_SpriteSheet_28
+    21300058: Ryan_SpriteSheet_29
+    21300060: Ryan_SpriteSheet_30
+    21300062: Ryan_SpriteSheet_31
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Ryan_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -13, y: 15}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 16}
+    - name: Ryan_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 16}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 13, y: 15}
+        - {x: 12, y: 16}
+    - name: Ryan_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 16}
+        - {x: -11, y: 16}
+        - {x: -13, y: 14}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 15}
+    - name: Ryan_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -13, y: 15}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 16}
+    - name: Ryan_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 16}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 13, y: 15}
+        - {x: 12, y: 16}
+    - name: Ryan_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 16}
+        - {x: -11, y: 16}
+        - {x: -13, y: 14}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 15}
+    - name: Ryan_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 16}
+        - {x: -11, y: 16}
+        - {x: -13, y: 10}
+        - {x: -13, y: -16}
+        - {x: 15, y: -16}
+        - {x: 15, y: 15}
+    - name: Ryan_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -13, y: 15}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 16}
+    - name: Ryan_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -13, y: 14}
+        - {x: -13, y: -15}
+        - {x: -12, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 16}
+    - name: Ryan_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -13, y: 15}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 16}
+    - name: Ryan_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -13, y: 15}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 16}
+    - name: Ryan_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 16}
+        - {x: -14, y: 16}
+        - {x: -14, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 14, y: -12}
+        - {x: 12, y: 13}
+    - name: Ryan_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -13, y: 9}
+        - {x: -13, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+    - name: Ryan_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 15}
+        - {x: -11, y: 15}
+        - {x: -13, y: 5}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 13}
+    - name: Ryan_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: -16}
+        - {x: 12, y: -13}
+        - {x: 12, y: 16}
+        - {x: -10, y: 16}
+        - {x: -11, y: 13}
+        - {x: -11, y: -13}
+        - {x: -7, y: -16}
+        - {x: 1, y: -16}
+        - {x: 2, y: -15}
+        - {x: 3, y: -16}
+    - name: Ryan_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 16}
+        - {x: -8, y: 16}
+        - {x: -11, y: 13}
+        - {x: -11, y: -15}
+        - {x: -8, y: -16}
+        - {x: 12, y: -16}
+    - name: Ryan_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: -16}
+        - {x: 12, y: -10}
+        - {x: 12, y: 15}
+        - {x: -11, y: 15}
+        - {x: -11, y: -11}
+        - {x: -10, y: -16}
+        - {x: 1, y: -16}
+        - {x: 2, y: -15}
+        - {x: 3, y: -16}
+    - name: Ryan_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -13, y: 15}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 16}
+    - name: Ryan_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -13, y: 13}
+        - {x: -13, y: -15}
+        - {x: -12, y: -16}
+        - {x: 15, y: -16}
+        - {x: 15, y: 14}
+        - {x: 13, y: 16}
+    - name: Ryan_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 16}
+        - {x: -13, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 15}
+        - {x: 14, y: 16}
+    - name: Ryan_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -13, y: 13}
+        - {x: -13, y: -15}
+        - {x: -12, y: -16}
+        - {x: 15, y: -16}
+        - {x: 15, y: 14}
+        - {x: 13, y: 16}
+    - name: Ryan_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 16}
+        - {x: -13, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 15}
+        - {x: 14, y: 16}
+    - name: Ryan_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 12}
+        - {x: -16, y: 8}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 7}
+        - {x: -2, y: 12}
+    - name: Ryan_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: -3}
+        - {x: 16, y: 4}
+        - {x: 13, y: 6}
+        - {x: -14, y: 6}
+        - {x: -16, y: 4}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: -5}
+        - {x: 15, y: -4}
+    - name: Ryan_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -13, y: 15}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 16}
+    - name: Ryan_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -13, y: 15}
+        - {x: -13, y: -16}
+        - {x: 15, y: -16}
+        - {x: 15, y: 16}
+    - name: Ryan_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -13, y: 9}
+        - {x: -13, y: -16}
+        - {x: 15, y: -16}
+        - {x: 15, y: 3}
+        - {x: 12, y: 16}
+    - name: Ryan_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -12, y: 13}
+        - {x: -13, y: -15}
+        - {x: -12, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 16}
+    - name: Ryan_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 19
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Ryan_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -13, y: 9}
+        - {x: -13, y: -16}
+        - {x: 15, y: -16}
+        - {x: 15, y: 3}
+        - {x: 12, y: 16}
+    - name: Ryan_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -13, y: 15}
+        - {x: -13, y: -16}
+        - {x: 14, y: -16}
+        - {x: 15, y: -15}
+        - {x: 15, y: 16}
+    - name: Ryan_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -12, y: 13}
+        - {x: -13, y: -14}
+        - {x: -12, y: -16}
+        - {x: 15, y: -16}
+        - {x: 16, y: -15}
+        - {x: 16, y: 12}
+        - {x: 13, y: 16}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

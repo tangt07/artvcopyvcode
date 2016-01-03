@@ -9,6 +9,7 @@ public class GameManager2 : MonoBehaviour {
 	public GameObject amyprefab;
 	public GameObject willprefab;
 	public GameObject killerprefab;
+	public GameObject ryanprefab;
 	public Text timertext;
 	public Text fightcountertext;
 	public Text restarttext;
@@ -37,8 +38,12 @@ public class GameManager2 : MonoBehaviour {
 	public int player1_wins;
 	public int player2_wins;
 	public float timer;
+	public float dropboxtime;
 	public string timerFormatted;
-	
+	const float TIMERCONST = 120f;
+	const float DROPBOXTIMECONST = 30f;
+	public GameObject[] boxes;
+
 	public Image pausepanel;
 	public Button resumebutton;
 	float waittime=0;
@@ -56,7 +61,8 @@ public class GameManager2 : MonoBehaviour {
 	
 	public Image player21win;	
 	public Image player22win;
-	
+
+
 	XDirection currentX = XDirection.None;
 	XDirection nextX = XDirection.None;
 	YDirection currentY = YDirection.None;
@@ -78,11 +84,13 @@ public class GameManager2 : MonoBehaviour {
 	float camsize;
 	
 	void Awake(){
+
 		_dicPlayerPrefabByName = new Dictionary<PlayerName, GameObject> ();
 		_dicPlayerPrefabByName.Add (PlayerName.Craig, craigprefab);
 		_dicPlayerPrefabByName.Add (PlayerName.Amy, amyprefab);
 		_dicPlayerPrefabByName.Add (PlayerName.Will, willprefab);
 		_dicPlayerPrefabByName.Add (PlayerName.Killer, killerprefab);
+		_dicPlayerPrefabByName.Add (PlayerName.Ryan, ryanprefab);
 
 
 		
@@ -94,11 +102,14 @@ public class GameManager2 : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+
+		Cutscene.current.StopCutscene ();
+		dropboxtime = DROPBOXTIMECONST;
 		if (Player2Select.player1name == PlayerName.None) {
-			Player2Select.player1name = PlayerName.Craig;
+			Player2Select.player1name = PlayerName.Amy;
 		}
 		if (Player2Select.player2name == PlayerName.None) {
-			Player2Select.player2name = PlayerName.Will;
+			Player2Select.player2name = PlayerName.Ryan;
 		}
 		if (SceneManager.players == 0) {
 			SceneManager.players = 1;
@@ -107,27 +118,30 @@ public class GameManager2 : MonoBehaviour {
 			numfights = 1;
 		}
 		if (SceneManager.players == 1) {
-			numfights = 3;
+			numfights = 4;
 			DetermineFightOpponents ();
 		}
 
 		StartCoroutine ("Pause");
 		
 		StartCoroutine ("Game");
-		
+
+		for (int i = 0; i < boxes.Length; i++) {
+			boxes [i].SetActive (false);
+
+		}
 		
 		
 		
 		
 		
 	}
-	
+
 	
 	void DetermineFightOpponents(){
-		int randomnumber;
+		/*int randomnumber;
 			
 		List<PlayerName> keyList = new List<PlayerName> (_dicPlayerPrefabByName.Keys);
-		
 
 		
 		keyList.Remove (PlayerName.None);
@@ -142,6 +156,17 @@ public class GameManager2 : MonoBehaviour {
 		}
 		//last opponent is killer
 		opponentList.Add(PlayerName.Killer);
+
+		*/
+
+		if (Player2Select.player1name == PlayerName.Amy) {
+			opponentList.Add (PlayerName.Ryan);
+		} else if (Player2Select.player1name == PlayerName.Ryan) {
+			opponentList.Add (PlayerName.Amy);
+		}
+		opponentList.Add (PlayerName.Will);
+		opponentList.Add (PlayerName.Craig);
+		opponentList.Add (PlayerName.Killer);
 
 
 	}
@@ -229,6 +254,10 @@ public class GameManager2 : MonoBehaviour {
 		} else {
 			player2movement.thisCharacter = Player2Select.player2name;
 		}
+
+		player1movement.numprojectiles = 10;
+		player2movement.numprojectiles = 10;
+
 		p1name.text = player1movement.thisCharacter.ToString();
 		p2name.text = player2movement.thisCharacter.ToString();
 
@@ -260,7 +289,6 @@ public class GameManager2 : MonoBehaviour {
 		player12win.enabled =false;
 		player21win.enabled =false;
 		player22win.enabled =false;
-
 
 		firstframe = true;
 		fightcountertext.enabled = false;
@@ -333,8 +361,8 @@ public class GameManager2 : MonoBehaviour {
 					cam.transform.position = new Vector3((player1.transform.position.x+player2.transform.position.x)/2f,camsize-6, -10f);
 					cam.orthographicSize = camsize;
 				}
-				player1anim.SetInteger("Health",player1health.current_health);				
-				player2anim.SetInteger("Health",player2health.current_health);
+				player1anim.SetFloat("Health",player1health.current_health);				
+				player2anim.SetFloat("Health",player2health.current_health);
 				
 				if(pause){
 					player1movement.enabled=false;
@@ -478,14 +506,18 @@ public class GameManager2 : MonoBehaviour {
 				player12win.enabled =false;
 				player21win.enabled =false;
 				player22win.enabled =false;
-				if(current_fight <= 3){
+				Cutscene.current.StartCutscene ();
+				yield return new WaitForSeconds(10);
+				Cutscene.current.StopCutscene ();
+				if(current_fight <= numfights){
 					Destroy(player2);
 					InstantiateOpponent();
 					SetUpPlayers ();
 				}else{
 					//you win
 					Debug.Log ("You Win!");
-					
+				
+
 				}
 				
 				
@@ -539,12 +571,20 @@ public class GameManager2 : MonoBehaviour {
 
 
 	}
-	
+	void DropBoxes(){
+		ProjectileDropBoxManager.current.DropBoxes ();
+	}
 	IEnumerator StartTimer(){
 		while (true) {
 			yield return new WaitForSeconds (1);
 			timer--;
+
+			if (timer%30 == 0) {
+				DropBoxes ();
+				dropboxtime = DROPBOXTIMECONST;
+			}
 			DisplayTimer ();
+
 		}
 		
 	}
