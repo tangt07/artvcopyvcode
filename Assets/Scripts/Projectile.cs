@@ -23,6 +23,9 @@ public class Projectile : MonoBehaviour {
 	void FixedUpdate(){
 		prb.MoveRotation(prb.rotation+_rotation*Time.fixedDeltaTime);
 		prb.velocity = new Vector2(_velocity,0);
+		if (Mathf.Abs (transform.position.x) > 12) {
+			gameObject.SetActive (false);
+		}
 	}
 
     

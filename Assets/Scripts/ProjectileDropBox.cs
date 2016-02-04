@@ -2,11 +2,17 @@
 using System.Collections;
 
 public class ProjectileDropBox : MonoBehaviour {
-	void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.tag == "Player") {
-			other.gameObject.GetComponent<PlayerMovement> ().numprojectiles++;
-			gameObject.SetActive (false);
 
+	void OnTriggerStay2D(Collider2D other){
+		
+		if (other.gameObject.tag == "Player") {
+
+			int currentprojectiles = other.gameObject.GetComponent<PlayerMovement> ().numprojectiles;
+
+			if (currentprojectiles < 10) {
+				other.gameObject.GetComponent<PlayerMovement> ().numprojectiles++;
+				gameObject.SetActive (false);
+			} 
 		}
 	}
 

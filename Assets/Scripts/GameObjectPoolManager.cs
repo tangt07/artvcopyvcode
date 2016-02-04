@@ -6,11 +6,11 @@ public class GameObjectPoolManager : MonoBehaviour {
 
 	public static GameObjectPoolManager current;
 
-	public int numberprojectiles;
+	public int numberobjects;
 
-	public List<GameObject> genericprojectilepool = new List<GameObject> ();
+	public List<GameObject> genericpool = new List<GameObject> ();
 
-	public GameObject genericprojectileprefab;
+	public GameObject genericprefab;
 
 
 
@@ -19,19 +19,19 @@ public class GameObjectPoolManager : MonoBehaviour {
 		current = this;
 
 
-		for (int i = 0; i < numberprojectiles; i++) {
-			GameObject obj = (GameObject) Instantiate (genericprojectileprefab);
+		for (int i = 0; i < numberobjects; i++) {
+			GameObject obj = (GameObject) Instantiate (genericprefab);
 			obj.SetActive (false);
-			obj.name = genericprojectileprefab.name;
-			genericprojectilepool.Add (obj);
+			obj.name = genericprefab.name;
+			genericpool.Add (obj);
 		}
 
 	}
 	
 	public GameObject GetPooledObject(){
-		for (int i = 0; i < genericprojectilepool.Count; i++) {
-			if (!genericprojectilepool [i].activeInHierarchy) {
-				return genericprojectilepool [i];
+		for (int i = 0; i < genericpool.Count; i++) {
+			if (!genericpool [i].activeInHierarchy) {
+				return genericpool [i];
 			}
 		}
 

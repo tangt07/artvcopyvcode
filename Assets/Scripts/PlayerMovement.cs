@@ -63,8 +63,26 @@ public class PlayerMovement : MonoBehaviour {
 
 		SetAnimDirectionBools (currentDirection);
 		SetJumpingBools (grounded, currentDirection);
-		SetFacingBools (currentFacing);
+		SetFacingBools (currentFacing); 
 
+	}
+	void ThrowPunch(){
+		Vector2 point = new Vector2 (transform.position.x, transform.position.y);
+		float radius = 1f;
+		Collider2D[] results = new Collider2D[100];
+		int hits = 0;
+		Dictionary<int,GameObject> enemies = new Dictionary<int, GameObject>();
+		int numcolliders = Physics2D.OverlapCircleNonAlloc (point,radius,results); 
+		for (int i = 0; i < numcolliders; i++) {
+			if(results[i].transform.root != transform.root){
+				if (results[i].gameObject.tag == "Player") {
+					enemies[results[i].gameObject.GetInstanceID()] = results [i].gameObject;
+				}
+			}
+		}
+		foreach (GameObject enemy in enemies.Values) {
+			enemy.GetComponent<PlayerHealth> ().Take_Damage ();
+		}
 	}
 	void SpawnProjectile(){
 		projectilecopy = GameObjectPoolManager.current.GetPooledObject ();
