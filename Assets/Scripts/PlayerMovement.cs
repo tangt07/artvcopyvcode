@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour {
 	public List<Projectile> projectileList = new List<Projectile> ();
 	public bool damage;
 	public float jumpspeed = 11f;
+	public bool backrightjump = false;
+	public bool backleftjump = false;
 
 	public int numprojectiles;
 
@@ -234,15 +236,34 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		if (!grounded && tempv.y == 0 && cacheFacing == Facing.Left) {
 			//if lands on something not the ground
+			backrightjump = true;
 			tempv = new Vector2(5f,5f);
 		}
 		if (!grounded && tempv.y == 0 && cacheFacing == Facing.Right) {
 			//if lands on something not the ground
+			backleftjump = true;
 			tempv = new Vector2(-5f,5f);
-		}
+		} 
+
+
 		rb.velocity = tempv;
 	}
+	void OnTriggerStay2D(Collider2D col){
 
+		if (col.CompareTag ("Wall")) {
+			if (backrightjump) {
+				backrightjump = false;
+				rb.velocity = new Vector2 (-10f, 5f);
+
+			}
+
+			if (backleftjump) {
+				backleftjump = false;
+				rb.velocity = new Vector2 (10f, 5f);
+
+			}
+		}
+	}
 
 	
 

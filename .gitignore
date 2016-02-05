@@ -24,3 +24,8 @@ ExportedObj/
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+
+#findbigfiles
+allfileshas.txt
+bigobjects.txt
+bigtosmall.txt

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Game.unity
+- path: C:/Users/Trevor/Downloads/artvcopyvcode-master (1)/artvcopyvcode-master/Assets/Scenes/Game.unity
   isLoaded: 1
   isActive: 1
