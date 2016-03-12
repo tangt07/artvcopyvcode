@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -20,13 +20,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	}
 	void Update(){
-		if ((!setdead && dead) || (setdead && !dead)) {
-			dead = setdead;
-			if (dead) {
-				anim.SetTrigger ("Dead");
-			}
-		}
-
+		
 
 	}
 
@@ -45,22 +39,11 @@ public class PlayerHealth : MonoBehaviour {
 		lives = 2;
 	}
 	public void Reset_health(){
-		setdead = false;
+		
 		current_health = 100f;
 		
 	}
-	public void Take_Damage(float damage = 1f){
 
-		current_health -= damage;
-		if (!dead) {
-			anim.SetFloat ("Health", current_health);
-			anim.SetTrigger ("Damage");
-		}		
-		if (current_health <= 0 && !dead) {
-			Lose_Life();
-		}
-
-	}
 	IEnumerator Damage(){
 		cooldown = false;
 		while (cooldown) {

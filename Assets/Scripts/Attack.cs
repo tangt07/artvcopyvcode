@@ -1,1 +1,1 @@
-﻿public enum Attack{None,Combat,Projectile,CombatProjectile};
+﻿public enum Attack{None,LightCombat,HeavyCombat,Projectile,CombatProjectile};

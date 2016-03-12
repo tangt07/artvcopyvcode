@@ -14,18 +14,18 @@ public class DestroyOnCollision : MonoBehaviour {
 
 				if (!other.shieldup) {
 					if (gameObject.tag == "Projectile") {
-						col.gameObject.GetComponent<PlayerHealth> ().Take_Damage (2.5f);
+						col.gameObject.GetComponent<PlayerMovement> ().Take_Damage (2.5f);
 					} else {
-						col.gameObject.GetComponent<PlayerHealth> ().Take_Damage ();
+						col.gameObject.GetComponent<PlayerMovement> ().Take_Damage ();
 
 					}
 					gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
 					gameObject.SetActive (false);
 				} else {
 					if (gameObject.tag == "Projectile") {
-						col.gameObject.GetComponent<PlayerHealth> ().Take_Damage (1.25f);
+						col.gameObject.GetComponent<PlayerMovement> ().Take_Damage (1.25f);
 					} else {
-						col.gameObject.GetComponent<PlayerHealth> ().Take_Damage (0);
+						col.gameObject.GetComponent<PlayerMovement> ().Take_Damage (0);
 
 					}
 					gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);

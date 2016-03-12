@@ -20,7 +20,10 @@ public class GameManager2 : MonoBehaviour {
 	public Image player2healthbar;
 	RectTransform player1healthbarrt;
 	RectTransform player2healthbarrt;
-	
+	public Image player1projectilebar;
+	public Image player2projectilebar;
+	RectTransform player1projectilebarrt;
+	RectTransform player2projectilebarrt;
 	PlayerHealth player1health;
 	PlayerHealth player2health;
 	
@@ -48,7 +51,6 @@ public class GameManager2 : MonoBehaviour {
 	public Button resumebutton;
 	float waittime=0;
 	bool aiprojectilekeydown;
-	bool firstframe;
 	bool nextframe;
 	bool roundover;
 	bool pause=false;
@@ -97,7 +99,7 @@ public class GameManager2 : MonoBehaviour {
 	}
 	
 	void Update(){
-
+		UpdateProjectilebar ();
 	}
 	
 	// Use this for initialization
@@ -267,6 +269,9 @@ public class GameManager2 : MonoBehaviour {
 		
 		player1anim.SetTrigger ("Restart");
 		player2anim.SetTrigger ("Restart");
+
+		player1.GetComponent<PlayerMovement> ().enemy = player2;
+		player2.GetComponent<PlayerMovement> ().enemy = player1;
 		
 		FlipSprites ();
 	}
@@ -290,7 +295,6 @@ public class GameManager2 : MonoBehaviour {
 		player21win.enabled =false;
 		player22win.enabled =false;
 
-		firstframe = true;
 		fightcountertext.enabled = false;
 		restarttext.enabled = false;
 		kotext.enabled = false;
@@ -303,7 +307,7 @@ public class GameManager2 : MonoBehaviour {
 		
 
 
-		while (!(current_fight>numfights)) {
+		while (!(current_fight > numfights)) {
 			
 			ResetTimer();
 			
@@ -636,6 +640,24 @@ public class GameManager2 : MonoBehaviour {
 		player1healthbar.rectTransform.sizeDelta = new Vector2(player1health.current_health * 2.0f,30f);	
 		player2healthbar.rectTransform.sizeDelta = new Vector2(player2health.current_health * 2.0f,30f);
 		
+	}
+	void UpdateProjectilebar(){
+		//Healthbar Update
+		if (player1movement.redprojectilebar) {
+			player1projectilebar.color = Color.red;
+		} else {
+			player1projectilebar.color = Color.white;
+		}
+
+		if (player2movement.redprojectilebar) {
+			player2projectilebar.color = Color.red;
+		} else {
+			player2projectilebar.color = Color.white;
+		}
+
+		player1projectilebar.rectTransform.sizeDelta = new Vector2(player1movement.numprojectiles * 20f,30f);	
+		player2projectilebar.rectTransform.sizeDelta = new Vector2(player2movement.numprojectiles * 20f,30f);
+
 	}
 	
 	

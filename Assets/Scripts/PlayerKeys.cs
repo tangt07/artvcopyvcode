@@ -8,6 +8,7 @@ public class PlayerKeys : MonoBehaviour {
 	public KeyCode jump;
 	public KeyCode block;
 	public KeyCode attack;
+	public KeyCode heavyattack;
 	public KeyCode projectile;
 	public bool newmove;
 
@@ -16,6 +17,7 @@ public class PlayerKeys : MonoBehaviour {
 	bool jumpkeydown;
 	bool blockkeydown;
 	bool attackkeydown;
+	bool heavyattackkeydown;
 	bool projectilekeydown;
 	bool leftkey;
 	bool rightkey;
@@ -85,6 +87,7 @@ public class PlayerKeys : MonoBehaviour {
 		blockkeydown 	= 	Input.GetKeyDown(block);
 		projectilekeydown = Input.GetKeyDown(projectile);
 		attackkeydown 	= 	Input.GetKeyDown (attack);
+		heavyattackkeydown = Input.GetKeyDown (heavyattack);
 		leftkey		 	= 	Input.GetKey(left);
 		rightkey	 	= 	Input.GetKey(right);
 		jumpkey		 	= 	Input.GetKey(jump);
@@ -101,7 +104,7 @@ public class PlayerKeys : MonoBehaviour {
 		//if any input, Change State (my keyboard can only handle 2 arrows at once)
 		//player1 directions and attacks
 		nextDirection = GetDirection (leftkeydown,rightkeydown,jumpkeydown,blockkeydown,leftkey,rightkey,jumpkey,blockkey,leftkeyup,rightkeyup,jumpkeyup,blockkeyup, currentDirection);
-		nextAttack = GetAttack (attackkeydown,projectilekeydown);
+		nextAttack = GetAttack (attackkeydown,heavyattackkeydown,projectilekeydown);
 
 
 		currentDirection = nextDirection;
@@ -110,17 +113,20 @@ public class PlayerKeys : MonoBehaviour {
 	 
 		
 	}
-	Attack GetAttack(bool attackkeydown, bool projectilekeydown){
-		if (attackkeydown && projectilekeydown) {
+	Attack GetAttack(bool attackkeydown, bool heavyattackkeydown, bool projectilekeydown){
+		if ((projectilekeydown) && (attackkeydown ||heavyattackkeydown)) {
 			return Attack.CombatProjectile;
 		}
-		if (attackkeydown && !projectilekeydown) {
-			return Attack.Combat;
+		if (attackkeydown && !projectilekeydown && !heavyattackkeydown) {
+			return Attack.LightCombat;
 		}
-		if (!attackkeydown && projectilekeydown) {
+		if (heavyattackkeydown && !projectilekeydown) {
+			return Attack.HeavyCombat;
+		}
+		if (!attackkeydown && projectilekeydown && !heavyattackkeydown) {
 			return Attack.Projectile;
 		}
-		if (!attackkeydown && !projectilekeydown) {
+		if (!attackkeydown && !projectilekeydown && !heavyattackkeydown) {
 			return Attack.None;
 		}
 		//so it doesn't complain

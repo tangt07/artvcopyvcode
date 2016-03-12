@@ -26,28 +26,44 @@ public class Player2Select : MonoBehaviour {
 
 	int player_num = 1;
 
+	int pointer;
 	private Dictionary<PlayerName,Button> _dicButtonByName = null;
 	
 	private Dictionary<string,PlayerName> _dicPlayerNameByName = null;
-	
-	
+
+	private Dictionary<GameObject,PlayerName> _dicPlayerNameByGO = null;
+	List<GameObject> charlist = new List<GameObject> ();
 
 	
 	void Awake(){
+		_dicPlayerNameByGO= new Dictionary<GameObject, PlayerName> ();
+		_dicPlayerNameByGO.Add (craigbutton.gameObject, PlayerName.Craig);
+		_dicPlayerNameByGO.Add (amybutton.gameObject, PlayerName.Amy);
+		_dicPlayerNameByGO.Add (willbutton.gameObject, PlayerName.Will);
+		_dicPlayerNameByGO.Add (killerbutton.gameObject, PlayerName.Killer);
+		_dicPlayerNameByGO.Add (ryanbutton.gameObject, PlayerName.Ryan);
+
+
 		_dicButtonByName = new Dictionary<PlayerName, Button> ();
 		_dicButtonByName.Add (PlayerName.Craig, craigbutton);
 		_dicButtonByName.Add (PlayerName.Amy, amybutton);
 		_dicButtonByName.Add (PlayerName.Will, willbutton);
 		_dicButtonByName.Add (PlayerName.Killer, killerbutton);
 		_dicButtonByName.Add (PlayerName.Ryan, ryanbutton);
-		
+
+
 		_dicPlayerNameByName = new Dictionary<string, PlayerName> ();
 		_dicPlayerNameByName.Add ("Craig", PlayerName.Craig);
 		_dicPlayerNameByName.Add ("Amy", PlayerName.Amy);
 		_dicPlayerNameByName.Add ("Will", PlayerName.Will);
 		_dicPlayerNameByName.Add ("Killer", PlayerName.Killer);
 		_dicPlayerNameByName.Add ("Ryan", PlayerName.Ryan);
-		
+		charlist.Add (craigbutton.gameObject);
+		charlist.Add (amybutton.gameObject);
+		charlist.Add (willbutton.gameObject);
+		charlist.Add (killerbutton.gameObject);
+		charlist.Add (ryanbutton.gameObject);
+
 	}
 	// Use this for initialization
 	void Start () {
@@ -57,10 +73,13 @@ public class Player2Select : MonoBehaviour {
 
 		if (SceneManager.players == 0) {
 			firstbutton = craigbutton.gameObject;
+			pointer = 0;
 			SceneManager.players = 2;
+			EventSystem.current.SetSelectedGameObject (firstbutton);
 		}
 		if (SceneManager.players == 1) {
 			firstbutton = amybutton.gameObject;
+			pointer = 1;
 			killerbutton.gameObject.SetActive(false);
 			craigbutton.gameObject.SetActive(false);
 			willbutton.gameObject.SetActive(false);
@@ -70,9 +89,39 @@ public class Player2Select : MonoBehaviour {
 
 		
 	}
-	
+	void GetNextChar(){
+		for(int nextpointer = pointer +1; nextpointer < charlist.Count ;nextpointer++ ) {
+			if (charlist [nextpointer].activeInHierarchy == true) {
+				pointer = nextpointer;
+				break;
+			}
+		}
+
+	}
+
+	void GetPrevChar(){
+		for(int nextpointer = pointer-1; nextpointer >= 0 ;nextpointer-- ) {
+			if (charlist [nextpointer].activeInHierarchy == true) {
+				pointer = nextpointer;
+				break;
+			}
+		}
+	}
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.RightArrow)) {
+			GetNextChar ();
+			EventSystem.current.SetSelectedGameObject (charlist[pointer]);
+
+		}
+		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+			GetPrevChar ();
+			EventSystem.current.SetSelectedGameObject (charlist[pointer]);
+
+		}
+		if (Input.GetKeyDown (KeyCode.Return)) {
+			SelectActivate (charlist[pointer]);
+		}
 		if (player_num == 2) {
 			p1pickimage.SetActive(false);
 			p2pickimage.SetActive(true);
@@ -132,6 +181,32 @@ public class Player2Select : MonoBehaviour {
 		}
 		
 		
+	}
+	public void SelectActivate(GameObject go){
+
+
+		//Player.players.Add(player_num,new Player());
+		//Player.players[player_num].name = _dicPlayerNameByName[name];
+
+		if (player_num == 1) {
+
+
+			player1name = _dicPlayerNameByGO[go];
+			_dicButtonByName[player1name].interactable = false;
+		}
+		if (player_num == 2) {
+			player2name = _dicPlayerNameByGO[go];
+		}
+
+
+
+		if (player_num == SceneManager.players) {
+			Application.LoadLevel ("Game");
+		} else {
+			player_num++;
+		}
+
+
 	}
 	
 

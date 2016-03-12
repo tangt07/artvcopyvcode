@@ -19,7 +19,7 @@ public class Player1Select : MonoBehaviour {
 
 
 	public static PlayerName player1name = PlayerName.None;
-
+	CursorLockMode wantedMode;
 
 	void Awake(){
 
@@ -40,6 +40,8 @@ public class Player1Select : MonoBehaviour {
 		if (SceneManager.players == 1) {
 			killerbutton.gameObject.SetActive(false);
 		}
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 	
 	}
 	
@@ -78,9 +80,7 @@ public class Player1Select : MonoBehaviour {
 
 
 	}
-	public void SelectOnHover(GameObject g){
-		EventSystem.current.SetSelectedGameObject (g);
-	}
+
 
 	public void PlaySelectedCharacter(){
 		if (SceneManager.players == 1) {
